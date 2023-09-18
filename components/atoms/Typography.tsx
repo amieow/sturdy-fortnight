@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 
 const TypographyVariant = [
+  "textXS",
   "textS",
   "textM",
   "textL",
@@ -23,7 +24,7 @@ type TypographyProps<T extends React.ElementType> = {
   as?: T;
   className?: string;
   color?: (typeof TypographyColor)[number];
-  type?: (typeof TypographyVariant)[number];
+  size?: (typeof TypographyVariant)[number];
   font?: (typeof TypographyFont)[number];
   thick?: (typeof TypographyThick)[number];
   children: React.ReactNode;
@@ -39,7 +40,8 @@ const typographyVariant = cva("leading-none", {
       poppins: "font-poppins",
       inter: "font-inter",
     },
-    type: {
+    size: {
+      textXS: "text-[8px]",
       textS: "text-[12px]",
       textM: "text-[14px]",
       textL: "text-[16px]",
@@ -53,10 +55,10 @@ const typographyVariant = cva("leading-none", {
       display1: "text-[64px]",
     },
     thick: {
-      bolder: "800",
-      bold: "700",
-      semibold: "600",
-      regular: "400",
+      bolder: "font-[800]",
+      bold: "font-[700]",
+      semibold: "font-[600]",
+      regular: "font-[400]",
     },
     color: {
       default: "text-neutral06 dark:text-neutral01",
@@ -64,7 +66,7 @@ const typographyVariant = cva("leading-none", {
       accent: "text-accent",
     },
     defaultVariant: {
-      type: "textM",
+      size: "textM",
       color: "default",
       font: "poppins",
       thick: "regular",
@@ -78,7 +80,7 @@ const Typography: TypographyComponent = React.forwardRef(
   <T extends React.ElementType = "p">(
     {
       as,
-      type,
+      size,
       color = "default",
       font,
       thick,
@@ -97,7 +99,7 @@ const Typography: TypographyComponent = React.forwardRef(
             font,
             color,
             thick,
-            type,
+            size,
             className,
           }),
         )}
