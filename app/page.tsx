@@ -4,6 +4,7 @@ import { Button } from "@/components/atoms/Button";
 import Typography from "@/components/atoms/Typography";
 import { Card } from "@/components/atoms/Card";
 import CourseMiniCard from "@/components/molecules/CourseMiniCard";
+import { COURSE_MINI_CARD_CONTENT } from "@/content/course";
 
 export default function Home() {
   // const { setTheme } = useTheme();
@@ -13,16 +14,8 @@ export default function Home() {
         {/*FILTER*/}
         <div className={"min-w-[250px]"}>This is filter</div>
         <div className={"grid grid-cols-3 gap-6"}>
-          {[1, 2, 3].map((index) => (
-            <CourseMiniCard
-              title={"UX Design Fundamentals: Navigating User Journeys"}
-              discountPrice={429000}
-              price={150000}
-              star={1}
-              totalReview={3400}
-              key={index}
-              imageUrl={"/courses/course1.png"}
-            />
+          {COURSE_MINI_CARD_CONTENT.map((props, index) => (
+            <CourseMiniCard {...props} key={index} />
           ))}
         </div>
       </div>
