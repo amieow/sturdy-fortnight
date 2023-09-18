@@ -5,6 +5,7 @@ import Typography from "@/components/atoms/Typography";
 import { Card } from "@/components/atoms/Card";
 import CourseMiniCard from "@/components/molecules/CourseMiniCard";
 import { COURSE_MINI_CARD_CONTENT } from "@/content/course";
+import { IconAdd, IconStar, IconStarFill, IconStarFillPrimary } from "@/components/atoms/icon";
 
 export default function Home() {
   // const { setTheme } = useTheme();
@@ -19,7 +20,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
       {/*<Button*/}
       {/*  className={"bg-primary dark:bg-accent"}*/}
       {/*  onClick={() => setTheme("dark")}*/}
