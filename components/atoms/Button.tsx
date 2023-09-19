@@ -17,7 +17,7 @@ const buttonVariants = cva("rounded-md   font-inter font-[600]", {
       tertiary: `!text-primary
             hover:text-primaryHover
             focus:text-primaryPressed
-            disabled:text-neutral07  disabled:dark:text-neutral04 `,
+            disabled:text-neutral07 disabled:dark:text-neutral04 `,
     },
     size: {
       medium: "h-10 py-2 px-4 text-textM",
