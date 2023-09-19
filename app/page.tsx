@@ -2,16 +2,17 @@
 import { Button } from "@/components/atoms/Button";
 import { COURSE_BIG_CARD_CONTENT } from "@/content/course";
 import React from "react";
-import CourseCategorySection from "@/components/organisms/CourseCategorySection";
+import TrendingCourseSection from "@/components/organisms/TrendingCourseSection";
 import LandingHeroSection from "@/components/organisms/landing/LandingHeroSection";
 import LandingOurProgramSection from "@/components/organisms/landing/LandingOurProgramSection";
+import LandingTestimonySection from "@/components/organisms/landing/LandingTestimonySection";
 
 export default function Home() {
   return (
     <main className="py-24 bg-neutral01 dark:bg-neutral08">
       <LandingHeroSection />
       <LandingOurProgramSection />
-      <CourseCategorySection
+      <TrendingCourseSection
         title={"Trending Course"}
         items={COURSE_BIG_CARD_CONTENT}
         seeMoreButton={
@@ -20,6 +21,7 @@ export default function Home() {
           </Button>
         }
       />
+      <LandingTestimonySection />
     </main>
   );
 }
