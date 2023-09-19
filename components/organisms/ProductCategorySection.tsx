@@ -15,7 +15,7 @@ const ProductCategorySection = ({
   seeMoreButton,
 }: ProductCategorySectionType) => {
   return (
-    <section className={"py-20 px-4 md:px-24  space-y-8"}>
+    <section className={"py-6 px-4 md:px-24  space-y-8"}>
       <div className={"flex justify-between items-center "}>
         <Typography size={"heading1"} thick={"bold"}>
           {title}
