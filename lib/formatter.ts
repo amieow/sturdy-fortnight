@@ -15,3 +15,38 @@ export const formatRupiah = (input: number): string => {
     minimumFractionDigits: 0,
   }).format(input);
 };
+
+export const millisecondsToHoursMinutesSeconds = (
+  milliseconds: number,
+): {
+  hours: string;
+  minutes: string;
+  seconds: string;
+} => {
+  // Calculate hours
+  const hours = String(Math.floor(milliseconds / (1000 * 60 * 60))).padStart(
+    2,
+    "0",
+  );
+
+  // Calculate remaining milliseconds after subtracting hours
+  const remainingMilliseconds =
+    milliseconds - parseInt(hours, 10) * 1000 * 60 * 60;
+
+  // Calculate minutes
+  const minutes = String(
+    Math.floor(remainingMilliseconds / (1000 * 60)),
+  ).padStart(2, "0");
+
+  // Calculate remaining milliseconds after subtracting minutes
+  const remainingMilliseconds2 =
+    remainingMilliseconds - parseInt(minutes, 10) * 1000 * 60;
+
+  // Calculate seconds
+  const seconds = String(Math.floor(remainingMilliseconds2 / 1000)).padStart(
+    2,
+    "0",
+  );
+
+  return { hours, minutes, seconds };
+};

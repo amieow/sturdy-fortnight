@@ -29,6 +29,7 @@ const config: Config = {
         neutral05: "#444444",
         neutral06: "#222222",
         neutral07: "#1D1D1D",
+        neutral08: "#181818",
         accent: "#69C4FA",
       },
       fontSize: {
