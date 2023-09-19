@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import * as React from "react"
 
-const ICON_AVAIBLE = {
+const iconAvaible = {
 	add: "add",
 	arrowRight: "arrow-right",
 	chart: "chart",
@@ -25,9 +25,7 @@ const ICON_AVAIBLE = {
 	resources: "resources",
 	search: "search",
 	setting: "setting",
-  star: "star",
-  starFill: "star-fill",
-  starFillPrimary: "star-fill-primary",
+	star: "star",
 	starball: "starball",
 	statistic: "statistic",
 	tiktok: "tiktok",
@@ -41,288 +39,264 @@ const ICON_DIR = "/icon"
 const DEFAULT_WIDTH_ICON = 24
 const DEFAULT_HEIGHT_ICON = 24
 
-type IconProps = {
-	width?: number
-	height?: number
-	className?: string
-}
+type IconProps = React.HTMLProps<HTMLImageElement>
 
-export const IconAdd = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="add-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.add}.svg`}
-		/>
-	)
-}
-export const IconArrowRight = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="Arrow-right-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.arrowRight}.svg`}
-		/>
-	)
-}
-export const IconChart = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="chart-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.chart}.svg`}
-		/>
-	)
-}
-export const IconCheck = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.check}.svg`}
-		/>
-	)
-}
+// export const IconAdd = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="add-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.add}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// IconAdd.displayName = "iconAdd"
+// export const IconArrowRight = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="Arrow-right-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.arrowRight}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// IconArrowRight.displayName = "iconArrowRight"
+// export const IconChart = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="chart-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.chart}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// IconChart.displayName = "iconChart"
+// export const IconCheck = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.check}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// IconCheck.displayName = "IconCheck"
 
-export const IconChevronDown = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.chevronDown}.svg`}
-		/>
-	)
-}
-export const IconChevronUp = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.chevronUp}.svg`}
-		/>
-	)
-}
+// export const IconChevronDown = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.chevronDown}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// IconChevronDown.displayName = "IconChevronDown"
+// export const IconchevronUp = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.chevronUp}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// IconchevronUp.displayName = "IconchevronUp"
 
-export const IconClock = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.clock}.svg`}
-		/>
-	)
-}
-export const IconDelete = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.delete}.svg`}
-		/>
-	)
-}
-export const IconEdit = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.edit}.svg`}
-		/>
-	)
-}
-export const IconExit = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.exit}.svg`}
-		/>
-	)
-}
-export const IconEye = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.eye}.svg`}
-		/>
-	)
-}
-export const Iconfacebook = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.facebook}.svg`}
-		/>
-	)
-}
+// export const Iconclock = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.clock}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconclock.displayName = "Iconclock"
+// export const Icondelete = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.delete}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Icondelete.displayName = "Icondelete"
+// export const Iconedit = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.edit}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconedit.displayName = "Iconedit"
+// export const Iconexit = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.exit}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconexit.displayName = "Iconexit"
+// export const Iconeye = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.eye}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconeye.displayName = "Iconeye"
+// export const Iconfacebook = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.facebook}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconfacebook.displayName = "Iconfacebook"
 
-export const IconHistory = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.history}.svg`}
-		/>
-	)
-}
+// export const Iconhistory = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.history}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconhistory.displayName = "Iconhistory"
 
-export const IconHome = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.home}.svg`}
-		/>
-	)
-}
-export const IconInfo = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.info}.svg`}
-		/>
-	)
-}
-export const IconInstagram = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.instagram}.svg`}
-		/>
-	)
-}
-export const IconPinterest = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.pinterest}.svg`}
-		/>
-	)
-}
-export const IconPlay = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.play}.svg`}
-		/>
-	)
-}
-export const IconPlusCircles = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.plusCircles}.svg`}
-		/>
-	)
-}
-export const IconResources = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.resources}.svg`}
-		/>
-	)
-}
-export const IconSearch = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.search}.svg`}
-		/>
-	)
-}
-export const IconSetting = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.setting}.svg`}
-		/>
-	)
-}
-export const IconStar = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-			alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-			className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.star}.svg`}
-		/>
-	)
-}
-export const IconStarFill = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-      alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-      className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.starFill}.svg`}
-		/>
-	)
-}
-export const IconStarFillPrimary = ({ width, height, className }: IconProps) => {
-	return (
-		<Image
-      alt="check-icons"
-			width={Number(width) || DEFAULT_WIDTH_ICON}
-			height={Number(height) || DEFAULT_HEIGHT_ICON}
-      className={cn(className)}
-			src={`${ICON_DIR}/${ICON_AVAIBLE.starFillPrimary}.svg`}
-		/>
-	)
-}
+// export const Iconhome = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.home}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconhome.displayName = "Iconhome"
+// export const Iconinfo = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.info}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconinfo.displayName = "Iconinfo"
+// export const Iconinstagram = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.instagram}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconinstagram.displayName = "Iconinstagram"
+// export const Iconeye = React.forwardRef<HTMLImageElement, IconProps>(
+// 	({ width, height, className }, ref) => {
+// 		return (
+// 			<Image
+// 				ref={ref}
+// 				alt="check-icons"
+// 				width={Number(width) || DEFAULT_WIDTH_ICON}
+// 				height={Number(height) || DEFAULT_HEIGHT_ICON}
+// 				className={cn(className)}
+// 				src={`${ICON_DIR}/${iconAvaible.eye}.svg`}
+// 			/>
+// 		)
+// 	}
+// )
+// Iconeye.displayName = "Iconeye"

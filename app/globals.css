@@ -16,3 +16,14 @@
   }
 }
 
+.slick-track{
+  @apply !flex !gap-8 !w-full
+}
+
+.slick-slide{
+  @apply !w-[380px]
+}
+.slick-slide .slick-active{
+  @apply !w-[420px]
+}
+

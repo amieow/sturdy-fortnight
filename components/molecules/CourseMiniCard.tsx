@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/atoms/Card";
 import Typography from "@/components/atoms/Typography";
 import { formatRupiah } from "@/lib/formatter";
 import Image from "next/image";
-import { IconStarFill, IconStarFillPrimary } from "../atoms/icon";
 
 export type CourseMiniCardType = {
   imageUrl: string;
@@ -12,8 +11,6 @@ export type CourseMiniCardType = {
   rating: number;
   reviewCount: number;
 };
-
-const MAX_STAR_REVIEW = 5
 
 const CourseMiniCard = ({
   imageUrl,
@@ -52,31 +49,28 @@ const CourseMiniCard = ({
 };
 
 const Review = ({
-  totalReview,
-  star,
-}: Pick<CourseMiniCardType, "totalReview" | "star">) => {
-  const minStar = Math.min(star,MAX_STAR_REVIEW)
-  return(
+  reviewCount,
+  rating,
+}: Pick<CourseMiniCardType, "reviewCount" | "rating">) => (
   <div className={"flex flex-row gap-3 items-center"}>
     {/*STAR*/}
     <div className={"flex flex-row gap-2"}>
-      {Array.from({ length: Math.max(0, (MAX_STAR_REVIEW - minStar)) }, (_,i) => (
-        <IconStarFill width={9} height={9} key={i}/>
-      ))}
-      {Array.from({ length: minStar }, (_,i) => (
-        <IconStarFillPrimary width={9} height={9} key={i}/>
-      ))}
+      <div>*</div>
+      <div>*</div>
+      <div>*</div>
+      <div>*</div>
+      <div>*</div>
     </div>
     <Typography size={"textXS"}>({reviewCount})</Typography>
   </div>
-)};
+);
 
 const Price = ({
   discountPrice,
   price,
 }: Pick<CourseMiniCardType, "discountPrice" | "price">) => (
   <div className={"flex flex-row gap-2"}>
-    <Typography size={"textS"} className={"line-through"}>
+    <Typography size={"textS"} thick={"bold"} className={"line-through"}>
       {formatRupiah(discountPrice)}
     </Typography>
     <Typography size={"textS"} thick={"bold"} color={"primary"}>

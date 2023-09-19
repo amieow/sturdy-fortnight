@@ -4,16 +4,16 @@ import CourseBigCard, {
 import React, { ReactNode } from "react";
 import Typography from "@/components/atoms/Typography";
 
-export type CourseCategoryType = {
+export type TrendingCourseSectionType = {
   title: string;
   items: CourseBigCardType[];
   seeMoreButton?: ReactNode;
 };
-const CourseCategorySection = ({
+const TrendingCourseSection = ({
   title,
   items,
   seeMoreButton,
-}: CourseCategoryType) => {
+}: TrendingCourseSectionType) => {
   return (
     <section className={"py-20 space-y-8"}>
       <div className={"flex justify-between items-center px-24 "}>
@@ -34,4 +34,4 @@ const CourseCategorySection = ({
   );
 };
 
-export default CourseCategorySection;
+export default TrendingCourseSection;
