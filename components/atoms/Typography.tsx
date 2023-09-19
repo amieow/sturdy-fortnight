@@ -25,7 +25,7 @@ type TypographyProps<T extends React.ElementType> = {
   className?: string;
   color?: (typeof TypographyColor)[number];
   size?: (typeof TypographyVariant)[number];
-  font?: (typeof TypographyFont)[number];
+  fontFamily?: (typeof TypographyFont)[number];
   thick?: (typeof TypographyThick)[number];
   children: React.ReactNode;
 } & React.ComponentPropsWithoutRef<T>;
@@ -36,7 +36,7 @@ type TypographyComponent = <T extends React.ElementType = "p">(
 
 const typographyVariant = cva("leading-none", {
   variants: {
-    font: {
+    fontFamily: {
       poppins: "font-poppins",
       inter: "font-inter",
     },
@@ -52,7 +52,7 @@ const typographyVariant = cva("leading-none", {
       heading1: "text-[36px]",
       display3: "text-[48px]",
       display2: "text-[56px]",
-      display1: "text-[64px]",
+      display1: "text-[32px] md:text-[64px]",
     },
     thick: {
       bolder: "font-[800]",
@@ -68,7 +68,7 @@ const typographyVariant = cva("leading-none", {
     defaultVariant: {
       size: "textM",
       color: "default",
-      font: "poppins",
+      fontFamily: "poppins",
       thick: "regular",
     },
   },
@@ -80,10 +80,10 @@ const Typography: TypographyComponent = React.forwardRef(
   <T extends React.ElementType = "p">(
     {
       as,
-      size,
+      size = "textM",
       color = "default",
-      font,
-      thick,
+      fontFamily = "poppins",
+      thick = "regular",
       className,
       children,
       ...props
@@ -91,12 +91,13 @@ const Typography: TypographyComponent = React.forwardRef(
     ref?: React.ComponentPropsWithRef<T>["ref"],
   ): React.ReactElement | null => {
     const Component = as || "p";
+
     return (
       <Component
         ref={ref}
         className={cn(
           typographyVariant({
-            font,
+            fontFamily,
             color,
             thick,
             size,

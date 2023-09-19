@@ -9,8 +9,8 @@ export type CourseMiniCardType = {
   title: string;
   discountPrice: number;
   price: number;
-  star: number;
-  totalReview: number;
+  rating: number;
+  reviewCount: number;
 };
 
 const MAX_STAR_REVIEW = 5
@@ -18,32 +18,33 @@ const MAX_STAR_REVIEW = 5
 const CourseMiniCard = ({
   imageUrl,
   title,
-  star,
-  totalReview,
+  rating,
+  reviewCount,
   price,
   discountPrice,
 }: CourseMiniCardType) => {
   return (
     <Card>
-      <Image
-        width={280}
-        height={280}
-        src={imageUrl}
-        alt={title}
-        className={"rounded-xl"}
-      />
+      <div className={"relative w-full h-[180px]"}>
+        <Image
+          fill={true}
+          src={imageUrl}
+          alt={title}
+          className={"w-full h-auto rounded-xl"}
+        />
+      </div>
 
       <CardContent className={"space-y-2 min-w-[280px] py-6 "}>
         <Typography
-          size={"textM"}
+          size={"textL"}
           thick={"bold"}
           color={"default"}
-          className={"max-w-[230px] capitalize"}
+          className={"capitalize"}
           as={"h4"}
         >
           {title}
         </Typography>
-        <Review totalReview={totalReview} star={star} />
+        <Review reviewCount={reviewCount} rating={rating} />
         <Price price={price} discountPrice={discountPrice} />
       </CardContent>
     </Card>
@@ -66,7 +67,7 @@ const Review = ({
         <IconStarFillPrimary width={9} height={9} key={i}/>
       ))}
     </div>
-    <Typography size={"textXS"}>({totalReview})</Typography>
+    <Typography size={"textXS"}>({reviewCount})</Typography>
   </div>
 )};
 
