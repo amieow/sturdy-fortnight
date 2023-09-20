@@ -43,15 +43,7 @@ const CoursePage = () => (
           <CourseMiniCard {...props} key={index} />
         ))}
       </div>
-      <div className={"flex gap-4 text-center w-full justify-center"}>
-        <div className={"bg-neutral06 px-2"}>{"<"}</div>
-        <div className={"bg-neutral06 px-2"}>1</div>
-        <div className={"bg-neutral06 px-2"}>2</div>
-        <div className={"bg-neutral06 px-2"}>3</div>
-        <div className={"bg-neutral06 px-2"}>4</div>
-        <div className={"bg-neutral06 px-2"}>5</div>
-        <div className={"bg-neutral06 px-2"}>{">"}</div>
-      </div>
+      <Pagination />
     </div>
   </main>
 );
@@ -76,4 +68,15 @@ const Filter = () => (
   </Accordion>
 );
 
+const Pagination = () => (
+  <div className={"flex gap-4 text-center w-full justify-center"}>
+    <div className={"bg-neutral06 px-2"}>{"<"}</div>
+    <div className={"bg-neutral06 px-2"}>1</div>
+    <div className={"bg-neutral06 px-2"}>2</div>
+    <div className={"bg-neutral06 px-2"}>3</div>
+    <div className={"bg-neutral06 px-2"}>4</div>
+    <div className={"bg-neutral06 px-2"}>5</div>
+    <div className={"bg-neutral06 px-2"}>{">"}</div>
+  </div>
+);
 export default CoursePage;
