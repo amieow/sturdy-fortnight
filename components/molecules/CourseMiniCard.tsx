@@ -25,7 +25,7 @@ const CourseMiniCard = ({
 }: CourseMiniCardType) => {
   return (
     <Card>
-      <div className={"relative w-full h-[180px]"}>
+      <div className={"relative w-full h-[150px]"}>
         <Image
           fill={true}
           src={imageUrl}
