@@ -16,7 +16,7 @@ const TypographyVariant = [
   "display2",
   "display1",
 ] as const;
-const TypographyColor = ["primary", "accent", "default"] as const;
+const TypographyColor = ["primary", "accent", "default", "muted"] as const;
 const TypographyFont = ["poppins", "inter"] as const;
 const TypographyThick = ["bold", "semibold", "regular"] as const;
 
@@ -64,6 +64,7 @@ const typographyVariant = cva("leading-none", {
       default: "text-neutral06 dark:text-neutral01",
       primary: "text-primary",
       accent: "text-accent",
+      muted: "text-neutral02",
     },
     defaultVariant: {
       size: "textM",
