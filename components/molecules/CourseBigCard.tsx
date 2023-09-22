@@ -6,6 +6,7 @@ import {
 } from "@/lib/formatter";
 import Image from "next/image";
 import { Button } from "@/components/atoms/Button";
+import { IconStar, Iconclock } from "../atoms/icon";
 
 export type CourseBigCardType = {
   imageUrl: string;
@@ -67,12 +68,12 @@ const Review = ({
       >
         {/* RATING */}
         <Typography size={"textM"} className={"flex gap-2 items-center"}>
-          <span>*</span>
+          <IconStar width={25} height={25} className="text-primary fill-primary"/>
           {rating} ({reviewCount})
         </Typography>
         {/* DURATION */}
         <Typography size={"textM"} className={"flex gap-2 items-center"}>
-          <span>*</span>
+          <Iconclock/>
           {durationObject.hours}:{durationObject.minutes}
         </Typography>
       </div>
