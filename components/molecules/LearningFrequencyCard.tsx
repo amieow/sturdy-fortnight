@@ -44,11 +44,11 @@ const data = [
 
 export default function LearningFrequencyCard() {
   return (
-    <Card className={"flex-grow w-fit  p-8 space-y-8"}>
+    <Card className={"flex-grow w-fit  p-6 space-y-8"}>
       <Typography size={"heading4"} thick={"semibold"} as={"h4"}>
         Learning Frequency
       </Typography>
-      <div className={"w-[450px] h-[300px] -ml-8 "}>
+      <div className={"w-[450px] h-[260px] -ml-8 "}>
         <ResponsiveContainer width={"100%"}>
           <BarChart data={data} barCategoryGap={"20%"}>
             <CartesianGrid strokeDasharray="8 8" vertical={false} />

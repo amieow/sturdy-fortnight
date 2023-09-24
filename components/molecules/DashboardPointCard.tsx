@@ -6,10 +6,19 @@ import {
 } from "@/components/atoms/Card";
 import Typography from "@/components/atoms/Typography";
 import { Button } from "@/components/atoms/Button";
+import Image from "next/image";
+import { Iconinfo } from "@/components/atoms/icon";
+import {
+  ListIcon,
+  MoreVertical,
+  MoreVerticalIcon,
+  StarIcon,
+} from "lucide-react";
+import { StarFilledIcon } from "@radix-ui/react-icons";
 
 const DashboardPointCard = () => (
-  <Card className={"w-[400px]"}>
-    <CardHeader className={"flex flex-row justify-between items-baseline"}>
+  <Card className={"w-[400px] pb-0"}>
+    <CardHeader className={"flex flex-row justify-between items-start"}>
       <Typography
         size={"heading4"}
         as={"h4"}
@@ -19,7 +28,7 @@ const DashboardPointCard = () => (
         Let’s study longer to more Points!
       </Typography>
       <Typography size={"textXl"} thick={"semibold"}>
-        :
+        <MoreVerticalIcon />
       </Typography>
     </CardHeader>
     <CardContent>
@@ -33,7 +42,14 @@ const DashboardPointCard = () => (
             className={
               "rounded-full w-12 h-12 bg-primary border-neutral01 border-[1px]"
             }
-          ></div>
+          >
+            <Image
+              width={150}
+              height={150}
+              src={"/profil.png"}
+              alt={"Image Profil"}
+            />
+          </div>
           <div>
             <Typography size={"textS"} color={"muted"}>
               Your Point Today
@@ -44,14 +60,14 @@ const DashboardPointCard = () => (
           </div>
         </div>
 
-        <div>!</div>
+        <Iconinfo className={"text-neutral03 w-6 h-6"} />
       </div>
       <div className={"mt-4 space-y-2"}>
         <ItemText title={"Path Focused"} content={"UX Designer"} />
         <ItemText title={"Current Tier"} content={"None"} />
       </div>
     </CardContent>
-    <CardFooter className={"flex justify-between items-center"}>
+    <CardFooter className={"flex justify-between items-center !pb-0"}>
       <div>
         <Typography size={"textS"} color={"muted"}>
           350 More Points to be
@@ -61,7 +77,7 @@ const DashboardPointCard = () => (
         </Typography>
       </div>
       <Button size={"large"} variant={"primary"} className={"bg-accent"}>
-        *
+        <StarFilledIcon className={"text-white w-6 h-6"} />
       </Button>
     </CardFooter>
   </Card>
