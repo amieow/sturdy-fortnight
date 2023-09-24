@@ -29,6 +29,7 @@ import IconTripleDotVertical from "@/public/icon/tripledotvertical.svg";
 import IconTwitter from "@/public/icon/twitter.svg";
 import IconUncheck from "@/public/icon/uncheck.svg";
 import IconYoutube from "@/public/icon/youtube.svg";
+import IconLogoVertical from "@/public/logo-vertical.svg";
 
 export {
   IconStarBall,
@@ -61,6 +62,7 @@ export {
   IconTwitter,
   IconUncheck,
   IconYoutube,
+  IconLogoVertical,
 };
 const IconStar = ({ width, height, className }: IconProps) => {
   return (

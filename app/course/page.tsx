@@ -33,10 +33,10 @@ const CoursePage = () => (
     <div>
       <div className={"flex gap-4 items-center"}>
         <Typography>Sort By</Typography>
-        <Combobox />
-        <Combobox />
-        <Combobox />
-        <Combobox />
+        <Combobox items={[]} textDefault={"Popularity"} />
+        <Combobox items={[]} textDefault={"Update Date"} />
+        <Combobox items={[]} textDefault={"Video Duration"} />
+        <Combobox items={[]} textDefault={"Price"} />
       </div>
       <div className={"grid grid-cols-3 gap-8 mt-8 mb-16"}>
         {COURSE_MINI_CARD_CONTENT.map((props, index) => (
