@@ -1,29 +1,46 @@
 import { Card, CardContent, CardHeader } from "@/components/atoms/Card";
 import Typography from "@/components/atoms/Typography";
 import { Combobox } from "@/components/atoms/Combobox";
-import MyCourseItem from "@/components/molecules/MyCourseItem";
+import MyCourseItem, {
+  MyCourseItemType,
+} from "@/components/molecules/MyCourseItem";
+import { MY_COURSES } from "@/content/course";
 
-export default function MyCourseCard() {
+export default function MyCourseCard({
+  title,
+  courses,
+  isBordered,
+}: {
+  title: string;
+  courses: MyCourseItemType[];
+  isBordered?: boolean;
+}) {
   return (
     <Card>
       <CardHeader className={"!space-y-4 !pb-0"}>
         <div className={"flex flex-row justify-between"}>
           <Typography as={"h4"} size={"heading4"} thick={"bold"}>
-            My Course
+            {title}
           </Typography>
           <div className={"flex gap-2 items-center"}>
             <Typography>Sort By</Typography>
-            <Combobox />
+            <Combobox
+              textDefault={"Recently"}
+              items={[
+                {
+                  label: "Category",
+                  value: "category",
+                },
+              ]}
+            />
           </div>
         </div>
-        <div className={"mt-4"}>
-          <hr />
-        </div>
+        <div className={"mt-4"}>{isBordered && <hr />}</div>
       </CardHeader>
       <CardContent className={"!pt-0"}>
-        <MyCourseItem />
-        <MyCourseItem />
-        <MyCourseItem />
+        {courses.map((props, index) => (
+          <MyCourseItem {...props} key={index} />
+        ))}
       </CardContent>
     </Card>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
+import { CheckIcon } from "@radix-ui/react-icons";
 import {
   Command,
   CommandEmpty,
@@ -17,31 +17,15 @@ import {
   PopoverTrigger,
 } from "@/components/atoms/Popover";
 import { Button } from "@/components/atoms/Button";
+import { IconChevronDown, IconchevronUp } from "@/components/atoms/icon";
 
-const frameworks = [
-  {
-    value: "next.js",
-    label: "Next.js",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
-];
-
-export function Combobox() {
+export function Combobox({
+  textDefault = "Select...",
+  items,
+}: {
+  textDefault?: string;
+  items: { value: string; label: string }[];
+}) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
@@ -52,11 +36,16 @@ export function Combobox() {
           variant="tertiary"
           role="combobox"
           aria-expanded={open}
-          className="w-fit justify-between bg-neutral05 text-left !text-neutral01 font-light text-textS"
+          className="flex items-center  gap-3 w-fit justify-between bg-neutral05 text-left !text-neutral01 font-light text-textS"
         >
           {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
+            ? items.find((framework) => framework.value === value)?.label
+            : textDefault}
+          {open ? (
+            <IconchevronUp className={"w-4 h-4"} />
+          ) : (
+            <IconChevronDown className={"w-4 h-4"} />
+          )}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-fit p-0 bg-neutral05 !text-textS border-none">
@@ -64,7 +53,7 @@ export function Combobox() {
           <CommandInput placeholder="Search..." className="h-9 " />
           <CommandEmpty>No Data Found</CommandEmpty>
           <CommandGroup>
-            {frameworks.map((framework) => (
+            {items.map((framework) => (
               <CommandItem
                 key={framework.value}
                 onSelect={(currentValue) => {
