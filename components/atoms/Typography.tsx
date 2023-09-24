@@ -41,6 +41,7 @@ type TypographyComponent = <T extends React.ElementType = "p">(
 ) => React.ReactElement | null;
 
 const typographyVariant = cva("leading-none", {
+
 	variants: {
 		fontFamily: {
 			poppins: "font-poppins",

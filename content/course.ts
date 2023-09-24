@@ -1,5 +1,6 @@
 import { CourseMiniCardType } from "@/components/molecules/CourseMiniCard";
 import { CourseBigCardType } from "@/components/molecules/CourseBigCard";
+import { MyCourseItemType } from "@/components/molecules/MyCourseItem";
 
 export const COURSE_MINI_CARD_CONTENT: CourseMiniCardType[] = [
   {
@@ -116,5 +117,88 @@ export const COURSE_BIG_CARD_CONTENT: CourseBigCardType[] = [
     duration: 29880000,
     price: 150000,
     imageUrl: "/courses/course5.png",
+  },
+];
+
+export const MY_COURSE_OVERVIEWS: MyCourseItemType[] = [
+  {
+    title: "UX Fundamental 101",
+    progress: 0,
+    last_chapter: null,
+    points: null,
+    isStarted: false,
+    isFinished: false,
+    imageUrl: "/courses/course1.png",
+  },
+  {
+    title: "UX Research Fundamental",
+    progress: 0,
+    last_chapter: "Chapter 3 : How to create UX Report",
+    points: "500/1000",
+    isStarted: true,
+    isFinished: false,
+    imageUrl: "/courses/course2.png",
+  },
+  {
+    title: "UI Fundamental 101",
+    progress: 0,
+    last_chapter: "",
+    points: "1000",
+    isStarted: true,
+    isFinished: true,
+    imageUrl: "/courses/course3.png",
+  },
+];
+
+export const MY_COURSES: MyCourseItemType[] = [
+  {
+    title: "UX Writing for Beginner",
+    progress: 50,
+    last_chapter: "Chapter 2 : Fundamental User Interface",
+    points: "500/1000",
+    isStarted: true,
+    isFinished: false,
+    imageUrl: "/courses/course1.png",
+    isBordered: true,
+  },
+  {
+    title: "UX Research Methods",
+    progress: 50,
+    last_chapter: "Chapter 3 : How to choose the right methods",
+    points: "500/1000",
+    isStarted: true,
+    isFinished: false,
+    imageUrl: "/courses/course2.png",
+    isBordered: true,
+  },
+  {
+    title: "Portfolio for UX Writing",
+    progress: 100,
+    last_chapter: "Chapter 3 : How to choose the right methods",
+    points: "1000/1000",
+    isStarted: true,
+    isFinished: true,
+    imageUrl: "/courses/course3.png",
+    isBordered: true,
+  },
+  {
+    title: "Portfolio for UX Writing",
+    progress: 100,
+    last_chapter: "Chapter 3 : How to choose the right methods",
+    points: "1000/1000",
+    isStarted: true,
+    isFinished: true,
+    imageUrl: "/courses/course4.png",
+    isBordered: true,
+  },
+  {
+    title: "Portfolio for UX Writing",
+    progress: 100,
+    last_chapter: "Chapter 3 : How to choose the right methods",
+    points: "1000/1000",
+    isStarted: true,
+    isFinished: true,
+    imageUrl: "/courses/course5.png",
+    isBordered: true,
   },
 ];

@@ -12,8 +12,8 @@ export type CourseMiniCardType = {
 	rating: number;
 	reviewCount: number;
 };
-const MAX_STAR_REVIEW = 5;
 
+const MAX_STAR_REVIEW = 5;
 const CourseMiniCard = ({
 	imageUrl,
 	title,
