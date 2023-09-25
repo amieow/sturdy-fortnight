@@ -8,31 +8,123 @@ import { CheckboxWithText } from "@/components/atoms/Checkbox";
 import Typography from "@/components/atoms/Typography";
 import CourseMiniCard from "@/components/molecules/CourseMiniCard";
 import { COURSE_MINI_CARD_CONTENT } from "@/content/course";
-import { Combobox } from "@/components/atoms/Combobox";
+import SelectPopularity from "@/components/atoms/SelectPopularity";
+import SelectDateSort from "@/components/atoms/SelectDateSort";
+import SelectDurationSort from "@/components/atoms/SelectDurationSort";
+import SelectPriceSort from "@/components/atoms/SelectPriceSort";
 
-const frameworks = [
+const filters = [
 	{
-		value: "next.js",
-		label: "Next.js",
+		title: "Category",
+		checkboxes: [
+			{
+				title: "UI/UX Design & Research",
+				value: "UI/UX Design & Research",
+			},
+			{
+				title: "Web Development",
+				value: "Web Development",
+			},
+		],
 	},
 	{
-		value: "sveltekit",
-		label: "SvelteKit",
+		title: "Learning Path",
+		checkboxes: [
+			{
+				title: "UX Research",
+				value: "UX Research",
+			},
+			{
+				title: "UI Designer",
+				value: "UI Designer",
+			},
+			{
+				title: "UX Designer",
+				value: "UX Designer",
+			},
+			{
+				title: "Front-End Developer",
+				value: "Front-End Developer",
+			},
+			{
+				title: "Back-End Developer",
+				value: "Back-End Developer",
+			},
+		],
 	},
 	{
-		value: "nuxt.js",
-		label: "Nuxt.js",
+		title: "Level",
+		checkboxes: [
+			{
+				title: "Fundamental",
+				value: "Fundamental",
+			},
+			{
+				title: "Mastery",
+				value: "Mastery",
+			},
+			{
+				title: "Professional",
+				value: "Professional",
+			},
+		],
 	},
 	{
-		value: "remix",
-		label: "Remix",
+		title: "Price",
+		checkboxes: [
+			{
+				title: "Paid",
+				value: "Paid",
+			},
+			{
+				title: "Free",
+				value: "Free",
+			},
+		],
 	},
 	{
-		value: "astro",
-		label: "Astro",
+		title: "Features",
+		checkboxes: [
+			{
+				title: "Build Portfolio",
+				value: "Build Portfolio",
+			},
+			{
+				title: "Collaboration Case Study",
+				value: "Collaboration Case Study",
+			},
+			{
+				title: "Coaching Career",
+				value: "Coaching Career",
+			},
+		],
+	},
+	{
+		title: "Video Duration",
+		checkboxes: [
+			{
+				title: "1-2 Hour",
+				value: "1-2 Hour",
+			},
+			{
+				title: "2-4 Hour",
+				value: "2-4 Hour",
+			},
+			{
+				title: "4-8 Hour",
+				value: "4-8 Hour",
+			},
+			{
+				title: "8-12 Hour",
+				value: "8-12 Hour",
+			},
+			{
+				title: "12+ Hour",
+				value: "12+ Hour",
+			},
+		],
 	},
 ];
-
 const CoursePage = () => (
 	<main className="flex flex-row py-12 px-24 bg-neutral01 dark:bg-neutral08 gap-12">
 		{/*FILTERS*/}
@@ -46,10 +138,12 @@ const CoursePage = () => (
 				Filters
 			</Typography>
 			<div className={"mt-6 space-y-2"}>
-				<Filter />
-				<Filter />
-				<Filter />
-				<Filter />
+				{filters.map((props, index) => (
+					<Filter
+						key={index}
+						{...props}
+					/>
+				))}
 			</div>
 		</div>
 
@@ -57,10 +151,10 @@ const CoursePage = () => (
 		<div>
 			<div className={"flex gap-4 items-center"}>
 				<Typography>Sort By</Typography>
-				<Combobox items={frameworks} />
-				<Combobox items={frameworks} />
-				<Combobox items={frameworks} />
-				<Combobox items={frameworks} />
+				<SelectPopularity />
+				<SelectDateSort />
+				<SelectDurationSort />
+				<SelectPriceSort />
 			</div>
 			<div className={"grid grid-cols-3 gap-8 mt-8 mb-16"}>
 				{COURSE_MINI_CARD_CONTENT.map((props, index) => (
@@ -75,31 +169,32 @@ const CoursePage = () => (
 	</main>
 );
 
-const Filter = () => (
+const Filter = ({
+	title,
+	checkboxes,
+}: {
+	title: string;
+	checkboxes: { title: string; value: string }[];
+}) => (
 	<Accordion
 		type="single"
+		defaultValue={"Category"}
 		collapsible>
-		<AccordionItem value="item-1">
+		<AccordionItem value={title}>
 			<AccordionTrigger className={"text-textXl bg-neutral08 px-4"}>
-				Category
+				{title}
 			</AccordionTrigger>
 			<AccordionContent>
 				<div className={"flex flex-col gap-4 p-4"}>
-					<CheckboxWithText
-						name={"1"}
-						text={"UI/UX Design & Research"}
-					/>
-					<hr />
-					<CheckboxWithText
-						name={"2"}
-						text={"UI/UX Design & Research"}
-					/>
-					<hr />
-					<CheckboxWithText
-						name={"3"}
-						text={"UI/UX Design & Research"}
-					/>
-					<hr />
+					{checkboxes.map(({ value, title }, index) => (
+						<div key={index}>
+							<CheckboxWithText
+								name={value}
+								text={title}
+							/>
+							<hr className={"mt-2"} />
+						</div>
+					))}
 				</div>
 			</AccordionContent>
 		</AccordionItem>

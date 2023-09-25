@@ -8,7 +8,7 @@ import Typography from "@/components/atoms/Typography";
 
 const LandingTestimonySection = () => {
   return (
-    <section>
+    <section className={"pb-12"}>
       <div className={"container  mx-8 md:mx-24"}>
         <div className={"py-12 text-black text-center space-y-8"}>
           <Typography size={"heading2"} as={"h2"} thick={"bold"}>

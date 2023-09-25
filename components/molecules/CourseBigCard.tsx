@@ -70,18 +70,14 @@ const Review = ({
 				<Typography
 					size={"textM"}
 					className={"flex gap-2 items-center"}>
-					<IconStar
-						width={25}
-						height={25}
-						className="text-primary fill-primary"
-					/>
+					<IconStar className="text-primary fill-primary w-6 h-6" />
 					{rating} ({reviewCount})
 				</Typography>
 				{/* DURATION */}
 				<Typography
 					size={"textM"}
 					className={"flex gap-2 items-center"}>
-					<Iconclock />
+					<Iconclock className={"w-6 h-6"} />
 					{durationObject.hours}:{durationObject.minutes}
 				</Typography>
 			</div>
