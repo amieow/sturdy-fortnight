@@ -1,11 +1,4 @@
-import DashboardPointSection from "@/components/organisms/dashboard/dashboard/DashboardPointSection";
-import DashboardMyCourseSection from "@/components/organisms/dashboard/dashboard/DashboardMyCourseSection";
 import Typography from "@/components/atoms/Typography";
-import { Button } from "@/components/atoms/Button";
-import { Iconinfo, IconStar } from "@/components/atoms/icon";
-import { StarFilledIcon } from "@radix-ui/react-icons";
-import { Card } from "@/components/atoms/Card";
-import Image from "next/image";
 import LearningReportPointCard from "@/components/molecules/LearningReportPointCard";
 import LearningReportExplorerCard from "@/components/molecules/LearningReportExplorerCard";
 import { Combobox } from "@/components/atoms/Combobox";
@@ -15,6 +8,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/atoms/Accordion";
+import { Progress } from "@/components/atoms/Progress";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/atoms/Avatar";
+import { AvatarIcon } from "@radix-ui/react-icons";
+import SelectCategories from "@/components/atoms/SelectCategories";
+import SelectProgress from "@/components/atoms/SelectProgress";
+import SelectRecent from "@/components/atoms/SelectRecent";
+import LearningReportItem from "@/components/molecules/LearningReportItem";
 
 const LearningReportPage = () => {
   return (
@@ -26,32 +26,115 @@ const LearningReportPage = () => {
         {/* EXPLORER */}
         <LearningReportExplorerCard />
       </section>
-      <section className={"mt-8"}>
+      <section className={"mt-8 space-y-6"}>
         <div className={"flex justify-between items-center"}>
           <div className={"space-y-2"}>
             <Typography>Sort By</Typography>
-            <Combobox items={[]} textDefault={"Recently accessed"} />
+            <SelectRecent />
           </div>
           <div className={"space-y-2"}>
             <Typography>Filter By</Typography>
             <div className={"flex gap-2"}>
-              <Combobox items={[]} textDefault={"Categories"} />
-              <Combobox items={[]} textDefault={"Progress"} />
+              <SelectCategories />
+              <SelectProgress />
             </div>
           </div>
         </div>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full space-y-6 ">
           <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+            <AccordionTrigger
+              className={
+                "flex flex-row justify-between items-center rounded-t-xl bg-neutral06 px-6"
+              }
+            >
+              <div className={"flex flex-row flex-grow items-center gap-6"}>
+                <Avatar className={"h-16 w-16"}>
+                  <AvatarImage src="/profil.png" alt="@shadcn" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className={"space-y-2"}>
+                  <div className={"flex gap-2 items-center"}>
+                    <Typography size={"heading4"} as={"h4"} color={"primary"}>
+                      UX Researcher
+                    </Typography>
+                    <div
+                      className={
+                        "border-[1px] border-neutral01 rounded-md px-4 py-1"
+                      }
+                    >
+                      Beginner
+                    </div>
+                  </div>
+                  <Typography size={"textS"} className={"text-left"}>
+                    10 Courses
+                  </Typography>
+                </div>
+              </div>
+              <div className={"flex gap-2 items-center basis-1/3 px-4"}>
+                <Progress
+                  value={50}
+                  className={"border-[1px] border-accent w-full  "}
+                />
+                <Typography as={"h6"} size={"heading4"}>
+                  50%
+                </Typography>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className={"py-6"}>
+              <div className={"flex gap-6 "}>
+                <LearningReportItem />
+                <LearningReportItem />
+                <LearningReportItem />
+                <LearningReportItem />
+              </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>Is it styled?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It comes with default styles that matches the other
-              components&apos; aesthetic.
+            <AccordionTrigger
+              className={
+                "flex flex-row justify-between items-center rounded-t-xl bg-neutral06 px-6"
+              }
+            >
+              <div className={"flex flex-row flex-grow items-center gap-6"}>
+                <Avatar className={"h-16 w-16"}>
+                  <AvatarImage src="/profil.png" alt="@shadcn" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className={"space-y-2"}>
+                  <div className={"flex gap-2 items-center"}>
+                    <Typography size={"heading4"} as={"h4"} color={"primary"}>
+                      UX Researcher
+                    </Typography>
+                    <div
+                      className={
+                        "border-[1px] border-neutral01 rounded-md px-4 py-1"
+                      }
+                    >
+                      Beginner
+                    </div>
+                  </div>
+                  <Typography size={"textS"} className={"text-left"}>
+                    10 Courses
+                  </Typography>
+                </div>
+              </div>
+              <div className={"flex gap-2 items-center basis-1/3 px-4"}>
+                <Progress
+                  value={50}
+                  className={"border-[1px] border-accent w-full  "}
+                />
+                <Typography as={"h6"} size={"heading4"}>
+                  50%
+                </Typography>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className={"py-6"}>
+              <div className={"flex gap-6 "}>
+                <LearningReportItem />
+                <LearningReportItem />
+                <LearningReportItem />
+                <LearningReportItem />
+              </div>
             </AccordionContent>
           </AccordionItem>
         </Accordion>

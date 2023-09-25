@@ -1,5 +1,6 @@
 import Typography from "@/components/atoms/Typography";
 import {
+  IconArrowRight,
   Iconfacebook,
   Iconinstagram,
   IconLogoVertical,
@@ -56,22 +57,30 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className={"container bg-neutral08 pb-12 pt-24"}>
+    <footer className={"container bg-neutral08 py-12"}>
       <div className={"flex flex-row justify-between"}>
-        <div className={"space-y-6 max-w-[250px]"}>
+        <div className={"space-y-6 max-w-[350px]"}>
           <IconLogoVertical />
           <Typography
             as={"h5"}
             size={"heading4"}
             thick={"semibold"}
-            className={""}
+            className={"max-w-[250px]"}
           >
             Join now to get discounts and other offers!
           </Typography>
-          <input
-            className={"w-full"}
-            placeholder={"Masukkan email untuk berlangganan"}
-          />
+          <div
+            className={
+              "flex justify-between border-b-[1px] border-neutral01 items-center"
+            }
+          >
+            <input
+              className={" py-2 bg-transparent flex-grow text-textM "}
+              placeholder={"Masukkan email untuk berlangganan"}
+            />
+            <IconArrowRight className={"w-6 h-6"} />
+          </div>
+
           <Typography>
             Register your email to get various class offers, interesting
             promotions, and the latest news from us!
