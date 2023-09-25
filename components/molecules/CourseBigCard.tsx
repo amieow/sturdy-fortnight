@@ -1,29 +1,29 @@
 import { Card, CardContent } from "@/components/atoms/Card";
 import Typography from "@/components/atoms/Typography";
 import {
-  formatRupiah,
-  millisecondsToHoursMinutesSeconds,
+	formatRupiah,
+	millisecondsToHoursMinutesSeconds,
 } from "@/lib/formatter";
 import Image from "next/image";
 import { Button } from "@/components/atoms/Button";
 import { IconStar, Iconclock } from "../atoms/icon";
 
 export type CourseBigCardType = {
-  imageUrl: string;
-  title: string;
-  price: number;
-  rating: number;
-  reviewCount: number;
-  duration: number;
+	imageUrl: string;
+	title: string;
+	price: number;
+	rating: number;
+	reviewCount: number;
+	duration: number;
 };
 
 const CourseBigCard = ({
-  imageUrl,
-  title,
-  rating,
-  reviewCount,
-  price,
-  duration,
+	imageUrl,
+	title,
+	rating,
+	reviewCount,
+	price,
+	duration,
 }: CourseBigCardType) => {
   return (
     <Card className={"w-[390px]"}>
@@ -55,9 +55,9 @@ const CourseBigCard = ({
 };
 
 const Review = ({
-  reviewCount,
-  duration,
-  rating,
+	reviewCount,
+	duration,
+	rating,
 }: Pick<CourseBigCardType, "reviewCount" | "duration" | "rating">) => {
   const durationObject = millisecondsToHoursMinutesSeconds(duration);
   return (
@@ -81,14 +81,19 @@ const Review = ({
 };
 
 const Price = ({ price }: Pick<CourseBigCardType, "price">) => (
-  <div className={"flex flex-row justify-between items-center mt-4"}>
-    <Typography size={"heading4"} thick={"bold"} color={"primary"}>
-      {formatRupiah(price)}
-    </Typography>
-    <Button size={"medium"} variant={"secondary"}>
-      See Details
-    </Button>
-  </div>
+	<div className={"flex flex-row justify-between items-center mt-4"}>
+		<Typography
+			size={"heading4"}
+			thick={"bold"}
+			color={"primary"}>
+			{formatRupiah(price)}
+		</Typography>
+		<Button
+			size={"medium"}
+			variant={"secondary"}>
+			See Details
+		</Button>
+	</div>
 );
 
 export default CourseBigCard;

@@ -8,6 +8,7 @@ import { MY_COURSES } from "@/content/course";
 import SelectRecent from "@/components/atoms/SelectRecent";
 import SelectProgress from "@/components/atoms/SelectProgress";
 
+
 export default function MyCourseCard({
   title,
   courses,
@@ -27,6 +28,7 @@ export default function MyCourseCard({
           <div className={"flex gap-2 items-center"}>
             <Typography>Sort By</Typography>
             <SelectProgress />
+
           </div>
         </div>
         <div className={"mt-4"}>{isBordered && <hr />}</div>

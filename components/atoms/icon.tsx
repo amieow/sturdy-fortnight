@@ -107,6 +107,7 @@ const IconStar = ({ width, height, className }: IconProps) => {
 // };
 //
 //
+
 const ICON_DIR = "/icon";
 const DEFAULT_WIDTH_ICON = 24;
 const DEFAULT_HEIGHT_ICON = 24;
@@ -306,3 +307,4 @@ type IconProps = {
 //     />
 //   );
 // };
+
