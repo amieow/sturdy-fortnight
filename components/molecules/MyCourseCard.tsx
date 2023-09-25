@@ -5,6 +5,9 @@ import MyCourseItem, {
   MyCourseItemType,
 } from "@/components/molecules/MyCourseItem";
 import { MY_COURSES } from "@/content/course";
+import SelectRecent from "@/components/atoms/SelectRecent";
+import SelectProgress from "@/components/atoms/SelectProgress";
+
 
 export default function MyCourseCard({
   title,
@@ -24,15 +27,8 @@ export default function MyCourseCard({
           </Typography>
           <div className={"flex gap-2 items-center"}>
             <Typography>Sort By</Typography>
-            <Combobox
-              textDefault={"Recently"}
-              items={[
-                {
-                  label: "Category",
-                  value: "category",
-                },
-              ]}
-            />
+            <SelectProgress />
+
           </div>
         </div>
         <div className={"mt-4"}>{isBordered && <hr />}</div>

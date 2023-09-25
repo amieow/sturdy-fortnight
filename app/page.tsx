@@ -9,7 +9,7 @@ import LandingTestimonySection from "@/components/organisms/landing/LandingTesti
 
 export default function Home() {
   return (
-    <main className="py-24 bg-neutral01 dark:bg-neutral08">
+    <main className=" bg-neutral01 dark:bg-neutral08">
       <LandingHeroSection />
       <LandingOurProgramSection />
       <TrendingCourseSection

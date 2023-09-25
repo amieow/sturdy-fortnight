@@ -12,12 +12,7 @@ const LandingHeroSection = () => {
             "relative w-[calc(100vw-32px)]  md:w-full h-[250px] md:h-[550px]"
           }
         >
-          <Image
-            fill
-            src={"/landing-hero.png"}
-            objectFit={"fill"}
-            alt={"Hero Image"}
-          />
+          <Image fill src={"/landing-hero.png"} alt={"Hero Image"} />
         </div>
       </div>
     </section>

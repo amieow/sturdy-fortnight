@@ -4,7 +4,7 @@ import { MY_COURSE_OVERVIEWS } from "@/content/course";
 
 export default function DashboardMyCourseSection() {
   return (
-    <div className={"flex flex-row mt-8 gap-8 "}>
+    <section className={"flex flex-row mt-8 gap-8 "}>
       {/*COURSE CARD*/}
       <div className={"w-2/3"}>
         <MyCourseCard
@@ -17,6 +17,6 @@ export default function DashboardMyCourseSection() {
       <div className={"w-1/3"}>
         <DashboardNotificationCard />
       </div>
-    </div>
+    </section>
   );
 }

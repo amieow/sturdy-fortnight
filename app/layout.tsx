@@ -1,6 +1,9 @@
+"use client";
 import "./globals.css";
 import { Inter, Poppins, Roboto } from "next/font/google";
 import { ThemeProvider } from "@/components/templates/ThemeProviders";
+import Header from "@/components/organisms/Header";
+import Footer from "@/components/organisms/Footer";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -25,17 +28,15 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return (
-		<html lang="en">
-			<body
-				className={`${poppins.variable} ${inter.variable} ${roboto.variable}`}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem>
-					{children}
-				</ThemeProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body className={`${poppins.variable} ${inter.variable} bg-neutral08`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
