@@ -28,7 +28,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${poppins.variable} ${inter.variable} ${roboto.variable}`}>
+				className={`${poppins.variable} ${inter.variable} ${roboto.variable} flex flex-col relative`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"

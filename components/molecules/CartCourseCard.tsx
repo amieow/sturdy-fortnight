@@ -21,7 +21,7 @@ const Review = ({ reviewCount }: Pick<CartCourseCardProps, "reviewCount">) => {
 				{Array.from({ length: MAX_STAR_REVIEW }, (_, i) => (
 					<IconStar
 						key={i}
-						size={8}
+						width={8}
 						className=" fill-neutral01 text-neutral01"
 					/>
 				))}
@@ -66,7 +66,10 @@ const ContentCard = (
 const Pricing = ({ price }: Pick<CartCourseCardProps, "price">) => (
 	<div className="flex flex-col h-20 justify-between px-[10px] ">
 		<button className=" bg-[#D72525] ml-auto rounded-bl-xl p-2 w-fit">
-			<Icondelete />
+			<Icondelete
+				width={24}
+				height={24}
+			/>
 		</button>
 		<Typography
 			color={"primary"}

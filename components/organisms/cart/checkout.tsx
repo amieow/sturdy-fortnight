@@ -6,6 +6,7 @@ import {
 	PaymentDetails,
 } from "@/components/molecules/CheckoutPaymentDetail";
 import { PaymentMethod } from "@/components/molecules/CheckoutPaymetMethod";
+import Link from "next/link";
 
 const PromoAndEmail = () => {
 	return (
@@ -42,12 +43,14 @@ export default function Checkouts() {
 				<PaymentMethod />
 				<PromoAndEmail />
 				<PaymentDetails {...PAYMENT_DETAIL} />
-				<Button
-					className="py-3"
-					size={"large"}
-					variant={"primary"}>
-					Complete the payment
-				</Button>
+				<Link href={"/cart/payment-complete"}>
+					<Button
+						className="py-3 w-full"
+						size={"large"}
+						variant={"primary"}>
+						Complete the payment
+					</Button>
+				</Link>
 			</div>
 		</div>
 	);

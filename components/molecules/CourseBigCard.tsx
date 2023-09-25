@@ -32,9 +32,8 @@ const CourseBigCard = ({
 					fill={true}
 					src={imageUrl}
 					alt={title}
-					objectFit={"fill"}
 					sizes="(max-width: 768px) 100vw"
-					className={"w-full h-auto rounded-xl"}
+					className={"w-full h-auto rounded-xl object-fill"}
 				/>
 			</div>
 			<CardContent className={"space-y-4 py-6 "}>
