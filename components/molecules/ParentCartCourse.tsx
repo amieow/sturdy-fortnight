@@ -2,7 +2,6 @@ import React from "react";
 import { CartCourseCardProps } from "./CartCourseCard";
 import { Checkbox } from "../atoms/Checkbox";
 import Typography from "../atoms/Typography";
-import { IconChevronDown } from "../atoms/icon";
 import { AccordionTrigger } from "../atoms/Accordion";
 
 export default function ParentCartCourse(
@@ -29,9 +28,7 @@ export default function ParentCartCourse(
 			</div>
 			<AccordionTrigger
 				onClick={props.toggleAccordion}
-				className=" w-9 h-9 flex items-center justify-center cursor-pointer">
-				<IconChevronDown width={12} />
-			</AccordionTrigger>
+				className=" w-9 h-9 flex items-center justify-center cursor-pointer"></AccordionTrigger>
 		</div>
 	);
 }
