@@ -30,8 +30,10 @@ import IconYoutube from "@/public/icon/youtube.svg";
 import IconLogoVertical from "@/public/logo-vertical.svg";
 import IconStar from "@/public/icon/star.svg";
 import IconCheckmarkCircle from "@/public/icon/checkmark-circle.svg";
-
+import IconGoogle from "@/public/icon/google.svg";
+import IconLinkedIn from "@/public/icon/Linkedin.svg";
 export {
+	IconLinkedIn,
 	IconCheckmarkCircle,
 	IconStarBall,
 	IconStar,
@@ -64,4 +66,5 @@ export {
 	IconUncheck,
 	IconYoutube,
 	IconLogoVertical,
+	IconGoogle,
 };

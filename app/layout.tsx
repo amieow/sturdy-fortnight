@@ -4,6 +4,7 @@ import { Inter, Poppins, Roboto } from "next/font/google";
 import { ThemeProvider } from "@/components/templates/ThemeProviders";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
+import IsLoginPage from "@/components/templates/IsLoginPage";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -30,14 +31,19 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${poppins.variable} ${inter.variable} bg-neutral08`}>
+			<body
+				className={`${poppins.variable} ${inter.variable} ${roboto.variable} bg-neutral08`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
 					enableSystem>
-					<Header />
+					<IsLoginPage>
+						<Header />
+					</IsLoginPage>
 					{children}
-					<Footer />
+					<IsLoginPage>
+						<Footer />
+					</IsLoginPage>
 				</ThemeProvider>
 			</body>
 		</html>
