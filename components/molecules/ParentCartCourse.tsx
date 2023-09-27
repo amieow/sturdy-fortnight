@@ -30,7 +30,7 @@ export default function ParentCartCourse(
 			<AccordionTrigger
 				onClick={props.toggleAccordion}
 				className=" w-9 h-9 flex items-center justify-center cursor-pointer">
-				<IconChevronDown size={12} />
+				<IconChevronDown width={12} />
 			</AccordionTrigger>
 		</div>
 	);

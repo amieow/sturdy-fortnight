@@ -53,8 +53,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 		return (
 			<div className={"relative"}>
 				{iconLeft && (
-					<div className=" absolute top-1/2 right-0 -translate-y-1/2 items-center pr-3">
+					<div className=" absolute top-1/2 left-0 -translate-y-1/2 items-center pl-3">
 						<IconAdd
+							width={24}
+							height={24}
 							className={cn(
 								{
 									"opacity-50": variant != "disable",
@@ -75,8 +77,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 						}),
 						"",
 						{
-							"pr-9": iconLeft,
-							"pl-9": iconRight,
+							"pr-10": iconLeft,
+							"pl-10": iconRight,
 						},
 					)}
 					{...props}
@@ -84,6 +86,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 				{iconRight && (
 					<div className=" absolute top-1/2 right-0 -translate-y-1/2 items-center pr-3">
 						<IconAdd
+							width={24}
+							height={24}
 							className={cn(
 								{
 									"opacity-50": variant != "disable",

@@ -1,3 +1,4 @@
+import { sumAllinObject } from "@/lib/utils";
 import Typography from "../atoms/Typography";
 import { Iconinfo } from "../atoms/icon";
 import { formatRupiah, formatUpperFirstcharSplit } from "@/lib/formatter";
@@ -15,7 +16,7 @@ type PaymentDetailCardProps = {
 	isKodeUnik?: boolean;
 };
 
-const PaymentDetailCard = (props: PaymentDetailCardProps) => {
+export const PaymentDetailCard = (props: PaymentDetailCardProps) => {
 	const priceFormat = props.price != 0 ? formatRupiah(props.price) : "-";
 	const titleFormat = formatUpperFirstcharSplit(props.title);
 	return (
@@ -37,9 +38,7 @@ const PaymentDetailCard = (props: PaymentDetailCardProps) => {
 };
 
 const PaymentDetails = (props: PaymentDetailType) => {
-	const totalTransfer = formatRupiah(
-		Object.values(props).reduce((acc, value) => acc + value, 0),
-	);
+	const totalTransfer = sumAllinObject(props);
 	return (
 		<div className="flex flex-col gap-3">
 			<div className="flex justify-between">
@@ -48,7 +47,10 @@ const PaymentDetails = (props: PaymentDetailType) => {
 					size={"textL"}>
 					Payment Details
 				</Typography>
-				<Iconinfo />
+				<Iconinfo
+					width={24}
+					height={24}
+				/>
 			</div>
 			<PaymentDetailCard
 				price={props.course_price}

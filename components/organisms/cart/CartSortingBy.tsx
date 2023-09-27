@@ -9,7 +9,7 @@ import {
 	SelectItem,
 	SelectSeparator,
 	SelectValue,
-} from "@/components/atoms/select";
+} from "@/components/atoms/Select";
 import { useState } from "react";
 const SORTING = ["price", "date"];
 export const SelectSortBy = () => {
@@ -19,14 +19,16 @@ export const SelectSortBy = () => {
 		<Select
 			open={open}
 			onOpenChange={(bol) => setOpen(bol)}
+			value={select}
 			onValueChange={(value) => setSelect(value)}>
-			<SelectTrigger className=" bg-transparent flex border gap-[10px] border-neutral02 rounded-2xl">
+			<SelectTrigger className="border gap-[10px] border-neutral02 rounded-2xl">
 				<Typography
 					thick={"regular"}
 					className=" font-light">
 					<SelectValue placeholder={select} />
 				</Typography>
 				<IconChevronDown
+					width={24}
 					className={`${open ? "rotate-180" : ""} transition-all`}
 				/>
 			</SelectTrigger>

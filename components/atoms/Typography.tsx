@@ -16,7 +16,13 @@ const TypographyVariant = [
 	"display2",
 	"display1",
 ] as const;
-const TypographyColor = ["primary", "accent", "default", "error"] as const;
+const TypographyColor = [
+	"primary",
+	"accent",
+	"default",
+	"error",
+	"muted",
+] as const;
 const TypographyFont = ["poppins", "inter", "roboto"] as const;
 const TypographyThick = [
 	"bolder",
@@ -41,7 +47,6 @@ type TypographyComponent = <T extends React.ElementType = "p">(
 ) => React.ReactElement | null;
 
 const typographyVariant = cva("leading-none", {
-
 	variants: {
 		fontFamily: {
 			poppins: "font-poppins",
@@ -71,6 +76,7 @@ const typographyVariant = cva("leading-none", {
 		},
 		color: {
 			default: "text-neutral06 dark:text-neutral01",
+			muted: "text-neutral02",
 			primary: "text-primary",
 			accent: "text-accent",
 			error: "text-[#E3604F]",
