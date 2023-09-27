@@ -9,7 +9,7 @@ import {
 	SelectItem,
 	SelectSeparator,
 	SelectValue,
-} from "@/components/atoms/select";
+} from "@/components/atoms/Select";
 import { useState } from "react";
 const SORTING = ["price", "date"];
 export const SelectSortBy = () => {
