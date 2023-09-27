@@ -3,12 +3,12 @@
 import Typography from "@/components/atoms/Typography";
 import { IconChevronDown } from "@/components/atoms/icon";
 import {
-	Selects,
-	SelectContents,
-	SelectSeparators,
-	SelectItems,
-	SelectTriggers,
-	SelectValues,
+	SelectMod,
+	SelectContentMod,
+	SelectSeperatorMod,
+	SelectItemMod,
+	SelectTriggerMod,
+	SelectValueMod,
 } from "@/components/atoms/Select";
 import { useState } from "react";
 const SORTING = ["price", "date"];
@@ -16,30 +16,30 @@ export const SelectSortBy = () => {
 	const [select, setSelect] = useState(SORTING[0]);
 	const [open, setOpen] = useState(false);
 	return (
-		<Selects
+		<SelectMod
 			open={open}
 			onOpenChange={(bol) => setOpen(bol)}
 			value={select}
 			onValueChange={(value) => setSelect(value)}>
-			<SelectTriggers className="border gap-[10px] border-neutral02 rounded-2xl">
+			<SelectTriggerMod className="border gap-[10px] border-neutral02 rounded-2xl">
 				<Typography
 					thick={"regular"}
 					className=" font-light">
-					<SelectValues placeholder={select} />
+					<SelectValueMod placeholder={select} />
 				</Typography>
 				<IconChevronDown
 					width={24}
 					className={`${open ? "rotate-180" : ""} transition-all`}
 				/>
-			</SelectTriggers>
-			<SelectContents position="popper">
+			</SelectTriggerMod>
+			<SelectContentMod position="popper">
 				{SORTING.map((item, index) => (
 					<div key={index}>
-						<SelectItems value={item}>{item}</SelectItems>
-						<SelectSeparators />
+						<SelectItemMod value={item}>{item}</SelectItemMod>
+						<SelectSeperatorMod />
 					</div>
 				))}
-			</SelectContents>
-		</Selects>
+			</SelectContentMod>
+		</SelectMod>
 	);
 };
