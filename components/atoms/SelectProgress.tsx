@@ -1,27 +1,27 @@
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
+	Selects,
+	SelectContents,
+	SelectGroups,
+	SelectItems,
+	SelectLabels,
+	SelectTriggers,
+	SelectValues,
 } from "@/components/atoms/Select";
 
 const SelectProgress = () => (
-  <Select>
-    <SelectTrigger className="w-[130px]">
-      <SelectValue placeholder="Progress" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectGroup>
-        <SelectLabel>Progress</SelectLabel>
-        <SelectItem value="start">Start</SelectItem>
-        <SelectItem value="finish">Finish</SelectItem>
-        <SelectItem value="in progress">In Progress</SelectItem>
-      </SelectGroup>
-    </SelectContent>
-  </Select>
+	<Selects>
+		<SelectTriggers className="w-[130px]">
+			<SelectValues placeholder="Progress" />
+		</SelectTriggers>
+		<SelectContents>
+			<SelectGroups>
+				<SelectLabels>Progress</SelectLabels>
+				<SelectItems value="start">Start</SelectItems>
+				<SelectItems value="finish">Finish</SelectItems>
+				<SelectItems value="in progress">In Progress</SelectItems>
+			</SelectGroups>
+		</SelectContents>
+	</Selects>
 );
 
 export default SelectProgress;

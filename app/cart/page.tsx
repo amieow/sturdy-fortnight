@@ -1,7 +1,7 @@
 import Typography from "@/components/atoms/Typography";
 import React from "react";
 import Checkouts from "@/components/organisms/cart/checkout";
-import { SelectSortBy } from "@/components/organisms/cart/CartSortingBy";
+import { SelectSortBy } from "@/components/atoms/SelectSortingBy";
 import { BottomContentCart } from "@/components/organisms/cart/CartAvaible";
 export default function Pages() {
 	return (

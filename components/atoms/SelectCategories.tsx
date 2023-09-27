@@ -1,25 +1,25 @@
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
+	Selects,
+	SelectContents,
+	SelectGroups,
+	SelectItems,
+	SelectLabels,
+	SelectTriggers,
+	SelectValues,
 } from "@/components/atoms/Select";
 
 const SelectCategories = () => (
-  <Select>
-    <SelectTrigger className="w-[130px]">
-      <SelectValue placeholder="Categories" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectGroup>
-        <SelectLabel>Categories</SelectLabel>
-        <SelectItem value="1">Category 1</SelectItem>
-      </SelectGroup>
-    </SelectContent>
-  </Select>
+	<Selects>
+		<SelectTriggers className="w-[130px]">
+			<SelectValues placeholder="Categories" />
+		</SelectTriggers>
+		<SelectContents>
+			<SelectGroups>
+				<SelectLabels>Categories</SelectLabels>
+				<SelectItems value="1">Category 1</SelectItems>
+			</SelectGroups>
+		</SelectContents>
+	</Selects>
 );
 
 export default SelectCategories;

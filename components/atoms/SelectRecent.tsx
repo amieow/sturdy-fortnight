@@ -1,27 +1,27 @@
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
+	Selects,
+	SelectContents,
+	SelectGroups,
+	SelectItems,
+	SelectLabels,
+	SelectTriggers,
+	SelectValues,
 } from "@/components/atoms/Select";
 
 const SelectRecent = () => (
-  <Select>
-    <SelectTrigger className="w-[180px]">
-      <SelectValue placeholder="Recently Accessed" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectGroup>
-        <SelectLabel>Recently Accessed</SelectLabel>
-        <SelectItem value="start">Start</SelectItem>
-        <SelectItem value="finish">Finish</SelectItem>
-        <SelectItem value="in progress">In Progress</SelectItem>
-      </SelectGroup>
-    </SelectContent>
-  </Select>
+	<Selects>
+		<SelectTriggers className="w-[180px]">
+			<SelectValues placeholder="Recently Accessed" />
+		</SelectTriggers>
+		<SelectContents>
+			<SelectGroups>
+				<SelectLabels>Recently Accessed</SelectLabels>
+				<SelectItems value="start">Start</SelectItems>
+				<SelectItems value="finish">Finish</SelectItems>
+				<SelectItems value="in progress">In Progress</SelectItems>
+			</SelectGroups>
+		</SelectContents>
+	</Selects>
 );
 
 export default SelectRecent;

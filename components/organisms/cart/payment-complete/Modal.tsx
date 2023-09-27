@@ -5,7 +5,6 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogContent,
-	DialogFooter,
 } from "@/components/atoms/Dialog";
 import Image from "next/image";
 import React, { useState } from "react";
