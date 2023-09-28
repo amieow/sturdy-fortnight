@@ -9,7 +9,8 @@ import {
 	SelectItemMod,
 	SelectTriggerMod,
 	SelectValueMod,
-} from "@/components/atoms/Select";
+	SelectGroupMod,
+} from "@/components/atoms/ui/Select";
 import { useState } from "react";
 const SORTING = ["price", "date"];
 export const SelectSortBy = () => {
@@ -27,18 +28,16 @@ export const SelectSortBy = () => {
 					className=" font-light">
 					<SelectValueMod placeholder={select} />
 				</Typography>
-				<IconChevronDown
-					width={24}
-					className={`${open ? "rotate-180" : ""} transition-all`}
-				/>
 			</SelectTriggerMod>
 			<SelectContentMod position="popper">
-				{SORTING.map((item, index) => (
-					<div key={index}>
-						<SelectItemMod value={item}>{item}</SelectItemMod>
-						<SelectSeperatorMod />
-					</div>
-				))}
+				<SelectGroupMod>
+					{SORTING.map((item, index) => (
+						<div key={index}>
+							<SelectItemMod value={item}>{item}</SelectItemMod>
+							<SelectSeperatorMod />
+						</div>
+					))}
+				</SelectGroupMod>
 			</SelectContentMod>
 		</SelectMod>
 	);

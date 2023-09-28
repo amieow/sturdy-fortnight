@@ -6,7 +6,7 @@ import {
 	SelectLabelMod,
 	SelectTriggerMod,
 	SelectValueMod,
-} from "@/components/atoms/Select";
+} from "@/components/atoms/ui/Select";
 
 const SelectPopularity = () => (
 	<SelectMod>
