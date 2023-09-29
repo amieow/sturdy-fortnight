@@ -38,7 +38,7 @@ export const PaymentDetailCard = (props: PaymentDetailCardProps) => {
 };
 
 const PaymentDetails = (props: PaymentDetailType) => {
-	const totalTransfer = sumAllinObject(props);
+	const totalTransfer = sumAllinObject(props, { formated: true });
 	return (
 		<div className="flex flex-col gap-3">
 			<div className="flex justify-between">

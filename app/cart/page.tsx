@@ -1,11 +1,11 @@
 import Typography from "@/components/atoms/Typography";
 import React from "react";
 import Checkouts from "@/components/organisms/cart/checkout";
-import { SelectSortBy } from "@/components/organisms/cart/CartSortingBy";
+import { SelectSortBy } from "@/components/atoms/SelectSortingBy";
 import { BottomContentCart } from "@/components/organisms/cart/CartAvaible";
 export default function Pages() {
 	return (
-		<main className="flex px-24 gap-7 w-full">
+		<main className="flex gap-7 w-full container">
 			<div className="flex flex-col w-full">
 				<TopContentCart />
 				<BottomContentCart />

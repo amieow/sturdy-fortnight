@@ -1,25 +1,25 @@
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/atoms/Select";
+	SelectMod,
+	SelectContentMod,
+	SelectGroupMod,
+	SelectItemMod,
+	SelectLabelMod,
+	SelectTriggerMod,
+	SelectValueMod,
+} from "@/components/atoms/ui/Select";
 
 const SelectCategories = () => (
-  <Select>
-    <SelectTrigger className="w-[130px]">
-      <SelectValue placeholder="Categories" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectGroup>
-        <SelectLabel>Categories</SelectLabel>
-        <SelectItem value="1">Category 1</SelectItem>
-      </SelectGroup>
-    </SelectContent>
-  </Select>
+	<SelectMod>
+		<SelectTriggerMod className="w-[130px]">
+			<SelectValueMod placeholder="Categories" />
+		</SelectTriggerMod>
+		<SelectContentMod>
+			<SelectGroupMod>
+				<SelectLabelMod>Categories</SelectLabelMod>
+				<SelectItemMod value="1">Category 1</SelectItemMod>
+			</SelectGroupMod>
+		</SelectContentMod>
+	</SelectMod>
 );
 
 export default SelectCategories;

@@ -22,7 +22,7 @@ export default function LoginLayout({
 					alt="blur"
 				/>
 			</div>
-			<div className=" w-full flex-col py-8 px-[42px] flex-shrink-0 flex gap-6 bg-[#1D1D1D] md:max-w-xl">
+			<div className=" w-full flex-col justify-center py-8 px-[42px] flex-shrink-0 flex gap-6 bg-[#1D1D1D] md:max-w-xl">
 				<Typography
 					thick="bold"
 					size="heading2"

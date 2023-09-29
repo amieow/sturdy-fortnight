@@ -71,6 +71,7 @@ const typographyVariant = cva("leading-none", {
 			bolder: "font-[800]",
 			bold: "font-[700]",
 			semibold: "font-[600]",
+			medium: "font-medium",
 			regular: "font-[400]",
 			light: "font-light",
 		},

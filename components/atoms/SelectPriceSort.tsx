@@ -1,26 +1,26 @@
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/atoms/Select";
+	SelectMod,
+	SelectContentMod,
+	SelectGroupMod,
+	SelectItemMod,
+	SelectLabelMod,
+	SelectTriggerMod,
+	SelectValueMod,
+} from "@/components/atoms/ui/Select";
 
 const SelectPriceSort = () => (
-  <Select>
-    <SelectTrigger className="w-[130px]">
-      <SelectValue placeholder="Price" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectGroup>
-        <SelectLabel>Price</SelectLabel>
-        <SelectItem value="free">Free</SelectItem>
-        <SelectItem value="paid">Paid</SelectItem>
-      </SelectGroup>
-    </SelectContent>
-  </Select>
+	<SelectMod>
+		<SelectTriggerMod className="w-[130px]">
+			<SelectValueMod placeholder="Price" />
+		</SelectTriggerMod>
+		<SelectContentMod>
+			<SelectGroupMod>
+				<SelectLabelMod>Price</SelectLabelMod>
+				<SelectItemMod value="free">Free</SelectItemMod>
+				<SelectItemMod value="paid">Paid</SelectItemMod>
+			</SelectGroupMod>
+		</SelectContentMod>
+	</SelectMod>
 );
 
 export default SelectPriceSort;

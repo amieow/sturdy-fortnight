@@ -1,28 +1,28 @@
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/atoms/Select";
+	SelectMod,
+	SelectContentMod,
+	SelectGroupMod,
+	SelectItemMod,
+	SelectLabelMod,
+	SelectTriggerMod,
+	SelectValueMod,
+} from "@/components/atoms/ui/Select";
 
 const SelectDateSort = () => (
-  <Select>
-    <SelectTrigger className="w-[130px]">
-      <SelectValue placeholder="Upload Date" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectGroup>
-        <SelectLabel>Upload Date</SelectLabel>
-        <SelectItem value="4">4 Weeks ago</SelectItem>
-        <SelectItem value="3">3 Weeks ago </SelectItem>
-        <SelectItem value="2">2 Weeks ago</SelectItem>
-        <SelectItem value="1">1 Weeks ago</SelectItem>
-      </SelectGroup>
-    </SelectContent>
-  </Select>
+	<SelectMod>
+		<SelectTriggerMod className="w-[130px]">
+			<SelectValueMod placeholder="Upload Date" />
+		</SelectTriggerMod>
+		<SelectContentMod>
+			<SelectGroupMod>
+				<SelectLabelMod>Upload Date</SelectLabelMod>
+				<SelectItemMod value="4">4 Weeks ago</SelectItemMod>
+				<SelectItemMod value="3">3 Weeks ago </SelectItemMod>
+				<SelectItemMod value="2">2 Weeks ago</SelectItemMod>
+				<SelectItemMod value="1">1 Weeks ago</SelectItemMod>
+			</SelectGroupMod>
+		</SelectContentMod>
+	</SelectMod>
 );
 
 export default SelectDateSort;

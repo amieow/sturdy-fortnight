@@ -1,29 +1,29 @@
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/atoms/Select";
+	SelectMod,
+	SelectContentMod,
+	SelectGroupMod,
+	SelectItemMod,
+	SelectLabelMod,
+	SelectTriggerMod,
+	SelectValueMod,
+} from "@/components/atoms/ui/Select";
 
 const SelectPopularity = () => (
-  <Select>
-    <SelectTrigger className="w-[130px]">
-      <SelectValue placeholder="Popularity" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectGroup>
-        <SelectLabel>Popularity</SelectLabel>
-        <SelectItem value="5">5 Stars</SelectItem>
-        <SelectItem value="4">4 Stars</SelectItem>
-        <SelectItem value="3">3 Stars</SelectItem>
-        <SelectItem value="2">2 Stars</SelectItem>
-        <SelectItem value="1">1 Stars</SelectItem>
-      </SelectGroup>
-    </SelectContent>
-  </Select>
+	<SelectMod>
+		<SelectTriggerMod className="w-[130px]">
+			<SelectValueMod placeholder="Popularity" />
+		</SelectTriggerMod>
+		<SelectContentMod>
+			<SelectGroupMod>
+				<SelectLabelMod>Popularity</SelectLabelMod>
+				<SelectItemMod value="5">5 Stars</SelectItemMod>
+				<SelectItemMod value="4">4 Stars</SelectItemMod>
+				<SelectItemMod value="3">3 Stars</SelectItemMod>
+				<SelectItemMod value="2">2 Stars</SelectItemMod>
+				<SelectItemMod value="1">1 Stars</SelectItemMod>
+			</SelectGroupMod>
+		</SelectContentMod>
+	</SelectMod>
 );
 
 export default SelectPopularity;
