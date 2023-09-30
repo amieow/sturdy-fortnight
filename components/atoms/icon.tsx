@@ -32,7 +32,9 @@ import IconStar from "@/public/icon/star.svg";
 import IconCheckmarkCircle from "@/public/icon/checkmark-circle.svg";
 import IconGoogle from "@/public/icon/google.svg";
 import IconLinkedIn from "@/public/icon/Linkedin.svg";
+import IconPlus from "@/public/icon/plus.svg";
 export {
+	IconPlus,
 	IconLinkedIn,
 	IconCheckmarkCircle,
 	IconStarBall,
