@@ -59,3 +59,13 @@ export const millisecondsToHoursMinutesSeconds = (
 
 	return { hours, minutes, seconds };
 };
+
+export const StringToUrlFormat = (
+	str: string,
+	option: "decrypt" | "encrypt",
+): string => {
+	if (option == "encrypt") {
+		return str.replaceAll(" ", "-").toLocaleLowerCase().trim();
+	}
+	return str.replaceAll("-", " ").toLocaleLowerCase().trim();
+};

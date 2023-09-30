@@ -51,6 +51,7 @@ module.exports = {
 				neutral08: "#181818",
 				error: "#E3604F",
 				accent: "#69C4FA",
+				Annotations: "#F6BE2C",
 			},
 			fontSize: {
 				textS: "12px",
