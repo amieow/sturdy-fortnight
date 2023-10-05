@@ -1,13 +1,8 @@
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/atoms/Accordion";
-import { CheckboxWithText } from "@/components/atoms/Checkbox";
+import {Accordion, AccordionContent, AccordionItem, AccordionTrigger,} from "@/components/atoms/Accordion";
+import {CheckboxWithText} from "@/components/atoms/Checkbox";
 import Typography from "@/components/atoms/Typography";
 import CourseMiniCard from "@/components/molecules/CourseMiniCard";
-import { COURSE_MINI_CARD_CONTENT } from "@/content/course";
+import {COURSE_MINI_CARD_CONTENT} from "@/content/course";
 import SelectPopularity from "@/components/atoms/SelectPopularity";
 import SelectDateSort from "@/components/atoms/SelectDateSort";
 import SelectDurationSort from "@/components/atoms/SelectDurationSort";

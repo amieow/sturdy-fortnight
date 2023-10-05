@@ -6,6 +6,7 @@ import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
 import IsLoginPage from "@/components/templates/IsLoginPage";
 
+
 const inter = Inter({
 	subsets: ["latin"],
 	weight: ["400", "300", "600"],

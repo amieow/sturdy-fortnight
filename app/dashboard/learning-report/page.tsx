@@ -1,16 +1,9 @@
 import Typography from "@/components/atoms/Typography";
 import LearningReportPointCard from "@/components/molecules/LearningReportPointCard";
 import LearningReportExplorerCard from "@/components/molecules/LearningReportExplorerCard";
-import { Combobox } from "@/components/atoms/Combobox";
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/atoms/Accordion";
-import { Progress } from "@/components/atoms/Progress";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/atoms/Avatar";
-import { AvatarIcon } from "@radix-ui/react-icons";
+import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/atoms/Accordion";
+import {Progress} from "@/components/atoms/Progress";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/atoms/Avatar";
 import SelectCategories from "@/components/atoms/SelectCategories";
 import SelectProgress from "@/components/atoms/SelectProgress";
 import SelectRecent from "@/components/atoms/SelectRecent";
