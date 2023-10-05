@@ -13,7 +13,7 @@ const StudentTestimonyCard = ({
   imageUrl,
 }: StudenTestimonyCardType) => (
   <Card
-    className={"px-4 md:px-14 py-8 !bg-neutral06 rounded-3xl min-w-[350px]"}
+    className={"px-4 md:px-14 py-8 !bg-neutral06 rounded-3xl min-w-[350px] h-[300px]"}
   >
     <CardContent className={"space-y-2 !p-0 max-w-xs md:max-w-sm text-center"}>
       <Image

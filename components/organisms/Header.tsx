@@ -1,7 +1,7 @@
 import {
 	IconCart,
 	IconLogoVertical,
-	IconSearch,
+	IconSearch
 } from "@/components/atoms/icon";
 import { Button } from "@/components/atoms/Button";
 import Link from "next/link";
