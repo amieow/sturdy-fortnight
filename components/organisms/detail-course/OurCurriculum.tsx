@@ -9,6 +9,7 @@ import {
 import Typography from "../../atoms/Typography";
 import { cn } from "@/lib/utils";
 import { CURRICULUMS } from "@/content/curriculums";
+
 const OurCurriculums = () => {
 	const [selected, setSelected] = useState("");
 	return (

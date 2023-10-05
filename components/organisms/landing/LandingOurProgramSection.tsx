@@ -29,7 +29,7 @@ const LandingOurProgramSection = () => (
   <section className={"bg-neutral02 dark:bg-neutral07"}>
     <div
       className={
-        "container py-8 md:py-16 space-y-10 mx-8 md:mx-24 flex flex-col md:flex-row gap-4 md:gap-24"
+        "container py-8 md:py-16 space-y-10 flex flex-col md:flex-row gap-4 md:gap-24"
       }
     >
       <div className={"md:basis-1/2 space-y-8"}>

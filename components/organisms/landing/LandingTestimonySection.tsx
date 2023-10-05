@@ -5,6 +5,7 @@ import StudentTestimonyCard, {
   StudenTestimonyCardType,
 } from "@/components/molecules/StudentTestimonyCard";
 import Typography from "@/components/atoms/Typography";
+import {IconChevronCircleLeft, IconChevronCircleRight} from "@/components/atoms/icon";
 
 const LandingTestimonySection = () => {
   return (
@@ -41,25 +42,31 @@ const studentTestimonies: StudenTestimonyCardType[] = [
       "The practical approach and experienced guidance has been invaluable. A must-have for anyone serious about web design!",
     imageUrl: "/student-testimony/student3.png",
   },
+  {
+    name: "Brooklyn Simmons",
+    testimony:
+        "The practical approach and experienced guidance has been invaluable. A must-have for anyone serious about web design!",
+    imageUrl: "/student-testimony/student3.png",
+  },
 ];
 const TestimonySlider = () => {
   const settings = {
-    className: "center",
-    centerMode: true,
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 3,
-    dots: true,
     speed: 500,
-    nextArrow: <div>*</div>,
-    prevArrow: <div>*</div>,
+      nextArrow: <IconChevronCircleRight className={"text-primary !w-[50px] !h-[50px]"} />,
+      prevArrow: <IconChevronCircleLeft className={"text-primary !w-[50px] !h-[50px]"} />,
   };
   return (
-    <Slider {...settings}>
-      {studentTestimonies.map((props, index) => (
-        <StudentTestimonyCard {...props} key={index} />
-      ))}
-    </Slider>
+      <div className={"relative px-12"}>
+        <Slider {...settings}>
+          {studentTestimonies.map((props, index) => (
+              <StudentTestimonyCard {...props} key={index} />
+          ))}
+        </Slider>
+      </div>
+
   );
 };
 

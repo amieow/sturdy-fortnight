@@ -44,6 +44,7 @@ function AboutTeacher() {
 								alt="blur"
 							/>
 						</CardHeader>
+
 						<CardContent className="p-0 flex flex-col max-md:flex-shrink-0">
 							<CardTitle className="flex flex-shrink-0">
 								{teacher.name}

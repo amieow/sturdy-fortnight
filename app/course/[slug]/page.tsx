@@ -24,6 +24,7 @@ function Pages({ params }: { params: { slug: string } }) {
 		DETAIL_COURSE.find(
 			(item) => StringToUrlFormat(item.title, "decrypt") == encrypt,
 		) || DETAIL_COURSE[0];
+
 	return (
 		<main className="flex container gap-12 w-full py-8">
 			<section
