@@ -33,12 +33,14 @@ import IconCheckmarkCircle from "@/public/icon/checkmark-circle.svg";
 import IconGoogle from "@/public/icon/google.svg";
 import IconLinkedIn from "@/public/icon/Linkedin.svg";
 import IconPlus from "@/public/icon/plus.svg";
+import IconFacebookColored from "@/public/icon/facebook-colored.svg";
 import IconGroupStarLeft from '@/public/group-star-left.svg'
 import IconGroupStarRight from '@/public/group-star-right.svg'
 import IconChevronCircleLeft from '@/public/icon/chevron-circle-left.svg'
 import IconChevronCircleRight from '@/public/icon/chevron-circle-right.svg'
 
 export {
+    IconFacebookColored,
     IconChevronCircleLeft,
     IconChevronCircleRight,
     IconGroupStarLeft,
@@ -77,5 +79,5 @@ export {
     IconUncheck,
     IconYoutube,
     IconLogoVertical,
-    IconGoogle,
+    IconGoogle
 };

@@ -47,7 +47,7 @@ const Pricing = ({
 
 const RightPriceCard = (props: RightPriceCardProps) => {
 	return (
-		<aside className=" px-[22px] py-4 flex h-fit sticky top-4 flex-col gap-4 bg-[#222222] w-full max-w-sm">
+		<aside className=" px-[22px] py-4 flex h-fit sticky top-4 flex-col gap-4 bg-[#222222] w-full lg:max-w-sm">
 			<HeaderDetailCourse
 				title={props.title}
 				rating={props.rating}

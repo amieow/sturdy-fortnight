@@ -2,9 +2,9 @@
 import { Button } from "@/components/atoms/Button";
 import Typography from "@/components/atoms/Typography";
 import {
+	IconFacebookColored,
 	IconGoogle,
 	IconLinkedIn,
-	Iconfacebook,
 } from "@/components/atoms/icon";
 import { cn } from "@/lib/utils";
 import React from "react";
@@ -16,7 +16,7 @@ const OTHER_LOGIN_METHOD = [
 		classname: "bg-red-600 hover:bg-red-800",
 	},
 	{
-		icon: Iconfacebook,
+		icon: IconFacebookColored,
 		title: "Facebook",
 		classname: "bg-blue-700 hover:bg-blue-900",
 	},
@@ -36,7 +36,7 @@ function OtherLoginMethod() {
 				fontFamily="roboto">
 				or
 			</Typography>
-			<div className="flex justify-between">
+			<div className="flex max-sm:flex-col gap-6 justify-between">
 				{OTHER_LOGIN_METHOD.map((item, index) => (
 					<Button
 						className={cn(
