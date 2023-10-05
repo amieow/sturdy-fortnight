@@ -1,12 +1,18 @@
 import Typography from "@/components/atoms/Typography";
 import { Button } from "@/components/atoms/Button";
 import Image from "next/image";
+import {IconGroupStarLeft, IconGroupStarRight} from "@/components/atoms/icon";
 
 const LandingHeroSection = () => {
   return (
     <section className={"min-h-screen"}>
-      <div className={"container py-8 md:py-16 space-y-10 mx-8 md:mx-24 "}>
-        <HeadingText />
+      <div className={"container py-8 md:py-16 space-y-10"}>
+          <div className={"relative"}>
+              <HeadingText />
+              <IconGroupStarLeft className={"absolute left-0 bottom-0"} />
+              <IconGroupStarRight className={"absolute top-0 -right-8"} />
+          </div>
+
         <div
           className={
             "relative w-[calc(100vw-32px)]  md:w-full h-[250px] md:h-[550px]"

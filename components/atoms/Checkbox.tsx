@@ -27,16 +27,16 @@ Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
 const CheckboxWithText = ({ name, text }: { name: string; text: string }) => {
 	return (
-		<div className="flex items-center space-x-2">
+		<div className="flex items-center space-x-4">
 			<Checkbox
 				id={name}
 				className={
-					"w-6 h-6 border-neutral01 data-[state=checked]:bg-neutral01 data-[state=checked]:text-neutral07 data-[state=checked]:border-neutral07 "
+					"w-6 h-6 border-neutral01 data-[state=checked]:bg-primary data-[state=checked]:text-white data-[state=checked]:border-neutral07 "
 				}
 			/>
 			<label
 				htmlFor={name}
-				className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+				className="text-sm dark:text-neutral02  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
 				{text}
 			</label>
 		</div>

@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-track{
+    @apply !flex !gap-8 !w-full
+}
+
+.slick-slide{
+    @apply !w-[380px]
+}
+.slick-slide .slick-active{
+    @apply !w-[420px]
+}
+
+.slick-prev, .slick-next{
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.slick-prev{
+    left: -60px !important;
+}
+
+.slick-next{
+    right: -60px !important;
+}
