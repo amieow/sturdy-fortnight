@@ -6,6 +6,7 @@ import {
 } from "@/components/atoms/Card";
 import Typography from "@/components/atoms/Typography";
 import { IconStar } from "@/components/atoms/icon";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
@@ -50,7 +51,7 @@ const TESTIMONY_COURSES = [
 function TestimonyCourse() {
 	return (
 		<section
-			className=" space-y-5"
+			className=" space-y-5 py-8"
 			id="testimoni-course">
 			<Typography
 				size={"heading3"}
@@ -58,53 +59,61 @@ function TestimonyCourse() {
 				as="h3">
 				Testimoni Course
 			</Typography>
-			{TESTIMONY_COURSES.map((course, index) => (
-				<Card
-					className="px-8 py-5 flex gap-[42px]"
-					key={index}>
-					<CardHeader className="flex-row flex-shrink-0 gap-6 p-0">
-						<Image
-							src={course.image}
-							alt="blur"
-							width={80}
-							height={80}
-						/>
-						<div className=" space-y-2">
-							<CardTitle className=" text-base">{course.name}</CardTitle>
-							<div className="flex gap-0.5">
-								{Array.from(
-									{ length: Math.min(course.rating, 5) },
-									(_, index) => (
-										<IconStar
-											key={index}
-											width={24}
-											height={24}
-											className="text-primary"
-										/>
-									),
-								)}
-								{Array.from(
-									{ length: Math.max(5 - course.rating, 0) },
-									(_, index) => (
-										<IconStar
-											key={index}
-											width={24}
-											height={24}
-											className=" fill-transparent"
-										/>
-									),
-								)}
+			<div className="gap-5 py-8 flex-col inline-flex overflow-x-scroll snap-mandatory snap-x">
+				{TESTIMONY_COURSES.map((course, index) => (
+					<Card
+						className={cn(
+							"px-8 py-5 flex gap-[42px] max-lg:flex-col snap-center",
+							{
+								"max-lg:hidden": index >= 2,
+							},
+						)}
+						key={index}>
+						<CardHeader className="flex-row flex-shrink-0 gap-6 p-0">
+							<div className=" relative w-20 h-20">
+								<Image
+									src={course.image}
+									alt="blur"
+									fill
+								/>
 							</div>
-						</div>
-					</CardHeader>
-					<Typography
-						color={"muted"}
-						thick={"light"}
-						size={"textL"}>
-						{course.description}
-					</Typography>
-				</Card>
-			))}
+							<div className=" space-y-2">
+								<CardTitle className=" text-base">{course.name}</CardTitle>
+								<div className="flex gap-0.5">
+									{Array.from(
+										{ length: Math.min(course.rating, 5) },
+										(_, index) => (
+											<IconStar
+												key={index}
+												width={24}
+												height={24}
+												className="text-primary"
+											/>
+										),
+									)}
+									{Array.from(
+										{ length: Math.max(5 - course.rating, 0) },
+										(_, index) => (
+											<IconStar
+												key={index}
+												width={24}
+												height={24}
+												className=" fill-transparent"
+											/>
+										),
+									)}
+								</div>
+							</div>
+						</CardHeader>
+						<Typography
+							color={"muted"}
+							thick={"light"}
+							size={"textL"}>
+							{course.description}
+						</Typography>
+					</Card>
+				))}
+			</div>
 		</section>
 	);
 }

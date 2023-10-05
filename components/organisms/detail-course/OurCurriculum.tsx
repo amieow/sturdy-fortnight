@@ -8,46 +8,12 @@ import {
 } from "../../atoms/Accordion";
 import Typography from "../../atoms/Typography";
 import { cn } from "@/lib/utils";
-
-type CURRICULUMSTYPE = {
-	chapter: string;
-	pelajaran: ("Quiz" | number)[];
-};
-const CURRICULUMS: CURRICULUMSTYPE[] = [
-	{
-		chapter: "Chapter 1: Getting Know About User Experience",
-		pelajaran: [1, 2, 3, "Quiz", 4, 5, "Quiz"],
-	},
-	{
-		chapter: "Chapter 2: User Experience Method & Framework",
-		pelajaran: [1, 2, 3, "Quiz", 4, 5, "Quiz"],
-	},
-	{
-		chapter: "Chapter 3: UX Process & Research",
-		pelajaran: [1, 2, 3, "Quiz", 4, 5, "Quiz"],
-	},
-	{
-		chapter: "Chapter 4: How to Validate User Experience ",
-		pelajaran: [1, 2, 3, "Quiz", 4, 5, "Quiz"],
-	},
-	{
-		chapter: "Chapter 5: UX Usability & Audit",
-		pelajaran: [1, 2, 3, "Quiz", 4, 5, "Quiz"],
-	},
-	{
-		chapter: "Chapter 6: How to create portfolio",
-		pelajaran: [1, 2, 3, "Quiz", 4, 5, "Quiz"],
-	},
-	{
-		chapter: "Chapter 7: Final Assesment",
-		pelajaran: [1, 2, 3, "Quiz", 4, 5, "Quiz"],
-	},
-];
+import { CURRICULUMS } from "@/content/curriculums";
 const OurCurriculums = () => {
 	const [selected, setSelected] = useState("");
 	return (
 		<section
-			className=" space-y-5"
+			className=" space-y-5 py-8"
 			id="our-curriculum">
 			<Typography
 				size={"heading3"}
@@ -66,9 +32,12 @@ const OurCurriculums = () => {
 						value={curriculum.chapter}
 						key={index}>
 						<AccordionTrigger
-							className={cn("bg-neutral06 rounded-lg px-5 text-xl font-inter", {
-								"bg-neutral05 rounded-b-none": selected == curriculum.chapter,
-							})}>
+							className={cn(
+								"bg-neutral06 text-left rounded-lg px-5 text-xl font-inter",
+								{
+									"bg-neutral05 rounded-b-none": selected == curriculum.chapter,
+								},
+							)}>
 							{curriculum.chapter}
 						</AccordionTrigger>
 						<AccordionContent className=" bg-neutral05 divide-y divide-neutral01 py-4 px-5 border-t border-t-neutral01">

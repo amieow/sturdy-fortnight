@@ -22,7 +22,7 @@ export const SelectSortBy = () => {
 			onOpenChange={(bol) => setOpen(bol)}
 			value={select}
 			onValueChange={(value) => setSelect(value)}>
-			<SelectTriggerMod className="border gap-[10px] border-neutral02 rounded-2xl">
+			<SelectTriggerMod className="border gap-[10px] bg-transparent border-neutral02 rounded-2xl">
 				<Typography
 					thick={"regular"}
 					className=" font-light">
