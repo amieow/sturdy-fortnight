@@ -1,8 +1,10 @@
+"use client";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { VariantProps, cva } from "class-variance-authority";
 import { IconAdd } from "./icon";
 import Typography from "./Typography";
+import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 
 const inputVariant = cva(
 	`flex transition-all h-12 w-full font-inter rounded-md border  p-4 text-sm`,
@@ -50,6 +52,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 		},
 		ref,
 	) => {
+		const isPassword = type == "password";
+		const [isShow, setIsShow] = React.useState(false);
 		return (
 			<div className={"relative"}>
 				{iconLeft && (
@@ -68,7 +72,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 				)}
 				<input
 					id={id}
-					type={type}
+					type={isPassword ? (isShow ? "text" : "password") : type}
 					ref={ref}
 					className={cn(
 						inputVariant({
@@ -97,6 +101,18 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 						/>
 					</div>
 				)}
+				{isPassword &&
+					(isShow ? (
+						<EyeOpenIcon
+							onClick={() => setIsShow(false)}
+							className={"dark:text-neutral03 w-5 h-5 absolute right-2 top-3"}
+						/>
+					) : (
+						<EyeClosedIcon
+							onClick={() => setIsShow(true)}
+							className={"dark:text-neutral03 w-5 h-5 absolute right-2 top-3"}
+						/>
+					))}
 			</div>
 		);
 	},

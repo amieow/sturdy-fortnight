@@ -11,6 +11,7 @@ import {
 	IconSetting,
 	IconStatistic,
 } from "@/components/atoms/icon";
+import { removeCookie } from "@/lib/cookie";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => (
 	<main className={"px-4 lg:px-24 py-24 flex flex-row lg:gap-12"}>
@@ -19,34 +20,39 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => (
 	</main>
 );
 
-const items: DashboardMenuType[] = [
-	{
-		title: "Dashboard",
-		link: "/dashboard",
-		icon: <Iconhome className={"h-6 w-6"} />,
-	},
-	{
-		title: "My Course",
-		link: "/dashboard/my-course",
-		icon: <Iconhistory className={"h-6 w-6"} />,
-	},
-	{
-		title: "Learning Report",
-		link: "/dashboard/learning-report",
-		icon: <IconStatistic className={"h-6 w-6"} />,
-	},
-	{
-		title: "Settings",
-		link: "/dashboard/settings",
-		icon: <IconSetting className={"h-6 w-6"} />,
-	},
-	{
-		title: "Log Out",
-		handleClick: () => {},
-		icon: <Iconexit className={"h-6 w-6"} />,
-	},
-];
 const SidebarDashboard = () => {
+	const LogOut = () => {
+		removeCookie("email");
+		removeCookie("password");
+		window.location.reload();
+	};
+	const items: DashboardMenuType[] = [
+		{
+			title: "Dashboard",
+			link: "/dashboard",
+			icon: <Iconhome className={"h-6 w-6"} />,
+		},
+		{
+			title: "My Course",
+			link: "/dashboard/my-course",
+			icon: <Iconhistory className={"h-6 w-6"} />,
+		},
+		{
+			title: "Learning Report",
+			link: "/dashboard/learning-report",
+			icon: <IconStatistic className={"h-6 w-6"} />,
+		},
+		{
+			title: "Settings",
+			link: "/dashboard/settings",
+			icon: <IconSetting className={"h-6 w-6"} />,
+		},
+		{
+			title: "Log Out",
+			handleClick: () => LogOut(),
+			icon: <Iconexit className={"h-6 w-6"} />,
+		},
+	];
 	return (
 		<Card
 			className={
