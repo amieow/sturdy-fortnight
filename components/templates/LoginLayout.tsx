@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import OtherLoginMethod from "../organisms/login/OtherLoginMethod";
 import OtherRoutingLogin from "../organisms/login/OtherRoutingLogin";
 import Typography from "../atoms/Typography";
 import { usePathname } from "next/navigation";
+import { IsLoginedUser, cn } from "@/lib/utils";
 
 export default function LoginLayout({
 	children,
@@ -12,8 +13,13 @@ export default function LoginLayout({
 	children: React.ReactNode;
 }) {
 	const Path = usePathname();
+	const [loading, setLoading] = useState(true);
+	useEffect(() => {
+		setLoading(false);
+	}, [setLoading]);
+
 	return (
-		<div className="flex min-h-screen">
+		<div className={`min-h-screen flex`}>
 			<div className="relative w-full max-md:hidden">
 				<Image
 					className=" object-cover"

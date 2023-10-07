@@ -2,36 +2,24 @@
 import {
 	IconCart,
 	IconLogoVertical,
+	IconNotification,
 	IconSearch,
 } from "@/components/atoms/icon";
 import { Button } from "@/components/atoms/Button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
-import { Popover, PopoverContent, PopoverTrigger } from "../atoms/Popover";
+import { IsLoginedUser, cn } from "@/lib/utils";
+import PopoverNavbar, { navLinks } from "../atoms/PopoverNavbar";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Header = () => {
-	const navLinks: { title: string; link: string }[] = [
-		{
-			title: "Home",
-			link: "/",
-		},
-		{
-			title: "Course",
-			link: "/course",
-		},
-		{
-			title: "Learning Path",
-			link: "/learning-path",
-		},
-		{
-			title: "About Us",
-			link: "/about-us",
-		},
-	];
-	const [openNavbar, setOpenNavbar] = useState(false);
-	const ToggleOpenNavbar = () => setOpenNavbar((current) => !current);
+	const isLogin = IsLoginedUser().status;
+	const [loading, setLoading] = useState(true);
+	useEffect(() => {
+		setLoading(false);
+	}, [setLoading]);
+
 	return (
 		<header
 			className={
@@ -54,65 +42,37 @@ const Header = () => {
 					<Link href={"/cart"}>
 						<IconCart className={"h-6 w-6 text-neutral04"} />
 					</Link>
-					<Link href={"/login/signin"}>
-						<Button>Sign In</Button>
-					</Link>
-				</div>
-				<Popover open={openNavbar}>
-					<PopoverTrigger onClick={ToggleOpenNavbar}>
-						<div
-							className={cn(
-								" p-3 flex flex-col gap-[3px] rounded-lg h-full w-10 md:hidden",
-								{
-									"bg-neutral06": openNavbar,
-								},
-							)}>
-							{Array.from({ length: 3 }, (_, i) => (
-								<span
-									key={i}
-									className="w-full h-[2px] bg-primary"></span>
-							))}
-						</div>
-					</PopoverTrigger>
-					<PopoverContent
-						onClick={ToggleOpenNavbar}
-						side="top"
-						sideOffset={5}
-						className=" bg-neutral06 md:hidden outline-none list-none border-none flex flex-col gap-6 justify-stretch items-center text-textXl font-light"
-						align="end">
-						<div className=" flex justify-center">
-							<IconLogoVertical
-								width={72}
-								height={50}
+					{!loading && isLogin && (
+						<>
+							<IconNotification
+								width={24}
+								height={24}
 							/>
-						</div>
-						<div className="w-full flex flex-col">
-							{navLinks.map((props, index) => (
-								<HeaderLink
-									isPhoneMode
-									{...props}
-									key={index}
+							<Link href={"/dashboard"}>
+								<Image
+									src={"/profil.png"}
+									alt=""
+									width={42}
+									height={42}
 								/>
-							))}
-						</div>
-						<Link
-							className=" sm:hidden"
-							href={"/cart"}>
-							<IconCart className={"h-6 w-6 text-neutral04"} />
-						</Link>
-						<Link
-							className="w-full sm:hidden"
-							href={"/login/signin"}>
-							<Button className="w-full">Sign In</Button>
-						</Link>
-					</PopoverContent>
-				</Popover>
+							</Link>
+						</>
+					)}
+					{!loading && !isLogin && (
+						<>
+							<Link href={"/login/signin"}>
+								<Button>Sign In</Button>
+							</Link>
+						</>
+					)}
+				</div>
+				<PopoverNavbar isLogin={isLogin} />
 			</div>
 		</header>
 	);
 };
 
-const HeaderLink = ({
+export const HeaderLink = ({
 	link,
 	title,
 	isPhoneMode,

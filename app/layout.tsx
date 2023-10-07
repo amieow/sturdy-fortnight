@@ -5,7 +5,9 @@ import { ThemeProvider } from "@/components/templates/ThemeProviders";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
 import IsLoginPage from "@/components/templates/IsLoginPage";
-
+import { useEffect } from "react";
+import { useBoundStore } from "@/lib/state";
+import { useRouter } from "next/navigation";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -30,6 +32,10 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	const getKue = useBoundStore((state) => state.getAllKue);
+	useEffect(() => {
+		getKue();
+	});
 	return (
 		<html lang="en">
 			<body

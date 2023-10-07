@@ -1,46 +1,70 @@
+"use client";
 import { Button } from "@/components/atoms/Button";
 import { LabelInput } from "@/components/atoms/input";
-import Link from "next/link";
-import React from "react";
+import { setCookie } from "@/lib/cookie";
+import { UserSchema, userSchemaType } from "@/lib/validation";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 
 const Form = () => {
+	const [formData, setFormData] = useState<Partial<userSchemaType>>({});
+	const [error, setError] = useState<
+		Zod.inferFlattenedErrors<typeof UserSchema> | null | undefined
+	>();
+
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		const result = UserSchema.safeParse(formData);
+
+		if (!result.success) {
+			setError(result.error.flatten());
+		} else {
+			setError(undefined);
+			const { email, password } = result.data;
+			setCookie("email", email);
+			setCookie("password", password);
+			window.location.reload();
+		}
+	};
+	const handleInput = (key: keyof userSchemaType) => ({
+		value: formData[key],
+		onChange: (e: ChangeEvent<HTMLInputElement>) => {
+			setFormData((current) => ({
+				...current,
+				[key]: e.target.value,
+			}));
+		},
+		message: {
+			body: error?.fieldErrors[key]?.join(", ") || "",
+			error: error?.fieldErrors[key] ? true : false,
+		},
+	});
 	return (
-		<div className="flex flex-col gap-5">
+		<form
+			onSubmit={handleSubmit}
+			className="flex flex-col gap-5">
 			<LabelInput
+				type={"email"}
 				title="Email"
 				placeholder="Enter your email address"
-				iconLeft
-				iconRight
 				variant={"normal"}
+				{...handleInput("email")}
 			/>
 			<LabelInput
+				type={"password"}
 				title="Password"
 				placeholder="Enter your Password here"
-				iconLeft
-				iconRight
 				variant={"normal"}
+				{...handleInput("password")}
 			/>
-		</div>
+			<Button
+				type="submit"
+				className="w-full"
+				variant={"primary"}
+				size={"large"}>
+				Sign In
+			</Button>
+		</form>
 	);
 };
 
-function pages() {
-	return (
-		<div className="flex flex-col gap-5">
-			<Form />
-			<Link
-				className="w-full"
-				href={"/dashboard"}>
-				<Button
-					type="submit"
-					className="w-full"
-					variant={"primary"}
-					size={"large"}>
-					Sign In
-				</Button>
-			</Link>
-		</div>
-	);
-}
-
-export default pages;
+export default Form;
