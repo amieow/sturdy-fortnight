@@ -32,7 +32,6 @@ const CourseBigCard = ({
 					fill={true}
 					src={imageUrl}
 					alt={title}
-					objectFit={"fill"}
 					sizes="(max-width: 768px) 100vw"
 					className={"w-full h-auto rounded-xl"}
 				/>
@@ -70,11 +69,9 @@ const Review = ({
 				{/* RATING */}
 				<Typography
 					size={"textM"}
-					className={"flex gap-2 items-center"}>
+					className={"flex gap-2 items-center justify-center"}>
 					<IconStar
-						width={25}
-						height={25}
-						className="text-primary fill-primary"
+						className="text-primary fill-primary w-5 h-5"
 					/>
 					{rating} ({reviewCount})
 				</Typography>
@@ -82,7 +79,7 @@ const Review = ({
 				<Typography
 					size={"textM"}
 					className={"flex gap-2 items-center"}>
-					<Iconclock />
+					<Iconclock className={"w-6 h-6"} />
 					{durationObject.hours}:{durationObject.minutes}
 				</Typography>
 			</div>
