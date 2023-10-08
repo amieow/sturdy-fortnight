@@ -29,8 +29,8 @@ const Form = () => {
 			setError(undefined);
 			const { email, password, ...rest } = result.data;
 			setItem(rest);
-			setCookie("email", email, { sameSite: "None" });
-			setCookie("password", password, { sameSite: "None" });
+			setCookie("email", email);
+			setCookie("password", password);
 			window.location.reload();
 		}
 	};
