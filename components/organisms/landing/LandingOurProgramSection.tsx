@@ -51,7 +51,7 @@ const LandingOurProgramSection = () => (
       </div>
       <div
         className={
-          "md:basis-1/2 relative  h-[150px] md:h-auto !m-0 w-[calc(100vw-32px)] md:w-full"
+          "md:basis-1/2 relative  h-[380px] md:h-auto !m-0 w-full"
         }
       >
         <Image fill src={"/our-program.png"} alt={"Our Program Image"} />
