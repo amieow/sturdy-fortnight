@@ -13,10 +13,9 @@ import SelectPopularity from "@/components/atoms/SelectPopularity";
 import SelectDateSort from "@/components/atoms/SelectDateSort";
 import SelectDurationSort from "@/components/atoms/SelectDurationSort";
 import SelectPriceSort from "@/components/atoms/SelectPriceSort";
-import { useState } from "react";
+import React, { useState } from "react";
 import SelectSortCourse from "@/components/atoms/PopoverSortCourse";
 import DialogFilterCourse from "@/components/organisms/course/ModalFilterCourse";
-import { Button } from "@/components/atoms/Button";
 import { IconFilter } from "@/components/atoms/icon";
 
 const filters = [
@@ -131,93 +130,23 @@ const filters = [
 		],
 	},
 ];
-export const FilterGroup = () => {
-	return (
-		<>
-			<Typography
-				size={"heading4"}
-				className={"font-bold"}>
-				Search Filters
-			</Typography>
-			<div className={"mt-6 space-y-2 max-xl:divide-y divide-neutral04"}>
-				{filters.map((props, index) => (
-					<Filter
-						key={index}
-						{...props}
-					/>
-				))}
-			</div>
-		</>
-	);
-};
-
-export const SelectSortByGroup = () => (
+export const FilterGroups = () => (
 	<>
-		<SelectPopularity />
-		<SelectDateSort />
-		<SelectDurationSort />
-		<SelectPriceSort />
+		<Typography
+			size={"heading4"}
+			className={"font-bold"}>
+			Search Filters
+		</Typography>
+		<div className={"mt-6 space-y-2 max-xl:divide-y divide-neutral04"}>
+			{filters.map((props, index) => (
+				<Filter
+					key={index}
+					{...props}
+				/>
+			))}
+		</div>
 	</>
 );
-const CoursePage = () => {
-	const [openModal, setOpen] = useState(false);
-	const ToggleModal = () => setOpen((bol) => !bol);
-	return (
-		<>
-			<DialogFilterCourse
-				open={openModal}
-				toggle={ToggleModal}
-			/>
-			<main className="flex flex-row container bg-neutral01 dark:bg-neutral08 gap-12">
-				{/*FILTERS*/}
-				<div
-					className={
-						"bg-neutral06 border-[0.5px] border-neutral01 rounded-2xl py-8 px-4 min-w-[280px] max-xl:hidden"
-					}>
-					<FilterGroup />
-				</div>
-
-				{/* COURSE */}
-				<div className=" w-full">
-					<div className="flex justify-between">
-						<div className={"flex gap-4 items-center max-lg:hidden"}>
-							<Typography>Sort By</Typography>
-							<SelectPopularity />
-							<SelectDateSort />
-							<SelectDurationSort />
-							<SelectPriceSort />
-						</div>
-						<div className=" lg:hidden">
-							<SelectSortCourse />
-						</div>
-						<div className=" xl:hidden">
-							<button
-								onClick={ToggleModal}
-								className="px-4 py-2 bg-neutral05 rounded-lg">
-								<IconFilter
-									width={24}
-									height={24}
-								/>
-							</button>
-						</div>
-					</div>
-					<div
-						className={
-							"grid max-sm:px-px grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 mb-16"
-						}>
-						{COURSE_MINI_CARD_CONTENT.map((props, index) => (
-							<CourseMiniCard
-								{...props}
-								key={index}
-							/>
-						))}
-					</div>
-					<Pagination />
-				</div>
-			</main>
-		</>
-	);
-};
 
 const Filter = ({
 	title,
@@ -262,4 +191,63 @@ const Pagination = () => (
 		<div className={"bg-neutral06 px-2"}>{">"}</div>
 	</div>
 );
-export default CoursePage;
+
+export default function CoursePage() {
+	const [openModal, setOpen] = useState(false);
+	const ToggleModal = () => setOpen((bol) => !bol);
+	return (
+		<>
+			<DialogFilterCourse
+				open={openModal}
+				toggle={ToggleModal}
+			/>
+			<main className="flex flex-row container bg-neutral01 dark:bg-neutral08 gap-12">
+				{/*FILTERS*/}
+				<div
+					className={
+						"bg-neutral06 border-[0.5px] border-neutral01 rounded-2xl py-8 px-4 min-w-[280px] max-xl:hidden"
+					}>
+					<FilterGroups />
+				</div>
+
+				{/* COURSE */}
+				<div className=" w-full">
+					<div className="flex justify-between">
+						<div className={"flex gap-4 items-center max-lg:hidden"}>
+							<Typography>Sort By</Typography>
+							<SelectPopularity />
+							<SelectDateSort />
+							<SelectDurationSort />
+							<SelectPriceSort />
+						</div>
+						<div className=" lg:hidden">
+							<SelectSortCourse />
+						</div>
+						<div className=" xl:hidden">
+							<button
+								onClick={ToggleModal}
+								className="px-4 py-2 bg-neutral05 rounded-lg">
+								<IconFilter
+									width={24}
+									height={24}
+								/>
+							</button>
+						</div>
+					</div>
+					<div
+						className={
+							"grid max-sm:px-px grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 mb-16"
+						}>
+						{COURSE_MINI_CARD_CONTENT.map((props, index) => (
+							<CourseMiniCard
+								{...props}
+								key={index}
+							/>
+						))}
+					</div>
+					<Pagination />
+				</div>
+			</main>
+		</>
+	);
+}
