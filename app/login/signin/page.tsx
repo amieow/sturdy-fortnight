@@ -20,8 +20,8 @@ const Form = () => {
 		} else {
 			setError(undefined);
 			const { email, password } = result.data;
-			setCookie("email", email);
-			setCookie("password", password);
+			setCookie("email", email, { sameSite: "None" });
+			setCookie("password", password, { sameSite: "None" });
 			window.location.reload();
 		}
 	};

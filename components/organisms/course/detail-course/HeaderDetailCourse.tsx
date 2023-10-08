@@ -1,8 +1,9 @@
 "use client";
 import { millisecondsToHoursMinutesSeconds } from "@/lib/formatter";
 import { RightPriceCardProps } from "./RightPriceCard";
-import Typography from "../../atoms/Typography";
-import { IconStar, Iconclock } from "../../atoms/icon";
+
+import { IconStar, Iconclock } from "@/components/atoms/icon";
+import Typography from "@/components/atoms/Typography";
 
 export const HeaderDetailCourse = (
 	props: Pick<

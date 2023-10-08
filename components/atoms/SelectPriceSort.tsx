@@ -10,7 +10,7 @@ import {
 
 const SelectPriceSort = () => (
 	<SelectMod>
-		<SelectTriggerMod className="w-[130px]">
+		<SelectTriggerMod className="w-[130px] max-lg:bg-transparent">
 			<SelectValueMod placeholder="Price" />
 		</SelectTriggerMod>
 		<SelectContentMod>

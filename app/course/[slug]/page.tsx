@@ -1,15 +1,13 @@
-import Typography from "@/components/atoms/Typography";
-import { AboutCourse } from "@/components/organisms/detail-course/AboutCourse";
-import { AboutTeacher } from "@/components/organisms/detail-course/AboutTeacher";
-import { NavigationLearning } from "@/components/organisms/detail-course/NavigationLearning";
-import { OurCurriculums } from "@/components/organisms/detail-course/OurCurriculum";
-import RightPriceCard from "@/components/organisms/detail-course/RightPriceCard";
-import { TestimonyCourse } from "@/components/organisms/detail-course/TestimonyCourse";
+import { AboutCourse } from "@/components/organisms/course/detail-course/AboutCourse";
+import { AboutTeacher } from "@/components/organisms/course/detail-course/AboutTeacher";
+import { NavigationLearning } from "@/components/organisms/course/detail-course/NavigationLearning";
+import { OurCurriculums } from "@/components/organisms/course/detail-course/OurCurriculum";
+import RightPriceCard from "@/components/organisms/course/detail-course/RightPriceCard";
+import { TestimonyCourse } from "@/components/organisms/course/detail-course/TestimonyCourse";
 import { DETAIL_COURSE } from "@/content/detailCourse";
 import { StringToUrlFormat } from "@/lib/formatter";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {

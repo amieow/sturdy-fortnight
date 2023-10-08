@@ -18,7 +18,7 @@ export function middleware(request: NextRequest) {
 			return NextResponse.redirect(new URL("/login/signin", request.url));
 		}
 	}
-	if (request.nextUrl.pathname.startsWith("/dashboard")) {
+	if (nextUrl.startsWith("/dashboard")) {
 		if (!isLogin) {
 			return NextResponse.redirect(new URL("/login/signin", request.url));
 		}
@@ -28,5 +28,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher: ["/login/:path*", "/login", "/dashboard/:path*"],
+	matcher: ["/login/:path*", "/dashboard/:path*"],
 };

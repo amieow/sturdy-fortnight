@@ -1,13 +1,14 @@
 import { Card, CardContent } from "@/components/atoms/Card";
 import Typography from "@/components/atoms/Typography";
 import {
+	StringToUrlFormat,
 	formatRupiah,
 	millisecondsToHoursMinutesSeconds,
 } from "@/lib/formatter";
 import Image from "next/image";
 import { Button } from "@/components/atoms/Button";
 import { IconStar, Iconclock } from "../atoms/icon";
-
+import Link from "next/link";
 export type CourseBigCardType = {
 	imageUrl: string;
 	title: string;
@@ -51,7 +52,10 @@ const CourseBigCard = ({
 					rating={rating}
 					duration={duration}
 				/>
-				<Price price={price} />
+				<Price
+					title={title}
+					price={price}
+				/>
 			</CardContent>
 		</Card>
 	);
@@ -82,7 +86,10 @@ const Review = ({
 				<Typography
 					size={"textM"}
 					className={"flex gap-2 items-center"}>
-					<Iconclock />
+					<Iconclock
+						width={24}
+						height={24}
+					/>
 					{durationObject.hours}:{durationObject.minutes}
 				</Typography>
 			</div>
@@ -90,7 +97,10 @@ const Review = ({
 	);
 };
 
-const Price = ({ price }: Pick<CourseBigCardType, "price">) => (
+const Price = ({
+	price,
+	title,
+}: Pick<CourseBigCardType, "price" | "title">) => (
 	<div className={"flex flex-row justify-between items-center mt-4"}>
 		<Typography
 			size={"heading4"}
@@ -98,11 +108,13 @@ const Price = ({ price }: Pick<CourseBigCardType, "price">) => (
 			color={"primary"}>
 			{formatRupiah(price)}
 		</Typography>
-		<Button
-			size={"medium"}
-			variant={"secondary"}>
-			See Details
-		</Button>
+		<Link href={`/course/${StringToUrlFormat(title, "encrypt")}`}>
+			<Button
+				size={"medium"}
+				variant={"secondary"}>
+				See Details
+			</Button>
+		</Link>
 	</div>
 );
 

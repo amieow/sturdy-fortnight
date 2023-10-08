@@ -35,7 +35,7 @@ export default function RootLayout({
 	const getKue = useBoundStore((state) => state.getAllKue);
 	useEffect(() => {
 		getKue();
-	});
+	}, [getKue]);
 	return (
 		<html lang="en">
 			<body

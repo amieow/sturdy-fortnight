@@ -23,17 +23,17 @@ const CourseMiniCard = ({
 	discountPrice,
 }: CourseMiniCardType) => {
 	return (
-		<Card>
+		<Card className=" max-lg:shrink-0 h-full snap-center inline-block">
 			<div className={"relative w-full h-[150px]"}>
 				<Image
 					fill={true}
 					src={imageUrl}
 					alt={title}
-					className={"w-full h-auto rounded-xl"}
+					className={"w-full h-[150px] rounded-xl"}
 				/>
 			</div>
 
-			<CardContent className={"space-y-2 min-w-[280px] py-6 "}>
+			<CardContent className={"space-y-2 max-w-[280px] p-4 "}>
 				<Typography
 					size={"textL"}
 					thick={"bold"}
@@ -64,6 +64,13 @@ const Review = ({
 		<div className={"flex flex-row gap-3 items-center"}>
 			{/*STAR*/}
 			<div className={"flex flex-row gap-2"}>
+				{Array.from({ length: minStar }, (_, i) => (
+					<IconStar
+						width={9}
+						key={i}
+						className="text-primary fill-primary"
+					/>
+				))}
 				{Array.from(
 					{ length: Math.max(0, MAX_STAR_REVIEW - minStar) },
 					(_, i) => (
@@ -74,13 +81,6 @@ const Review = ({
 						/>
 					),
 				)}
-				{Array.from({ length: minStar }, (_, i) => (
-					<IconStar
-						width={9}
-						key={i}
-						className="text-primary fill-primary"
-					/>
-				))}
 			</div>
 			<Typography size={"textXS"}>({reviewCount})</Typography>
 		</div>

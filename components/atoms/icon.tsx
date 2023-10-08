@@ -39,7 +39,11 @@ import IconGroupStarRight from "@/public/group-star-right.svg";
 import IconChevronCircleLeft from "@/public/icon/chevron-circle-left.svg";
 import IconChevronCircleRight from "@/public/icon/chevron-circle-right.svg";
 import IconNotification from "@/public/icon/notification.svg";
+import IconFilter from "@/public/icon/filter.svg";
+import IconEdit2 from "@/public/icon/edit-2.svg";
 export {
+	IconEdit2,
+	IconFilter,
 	IconNotification,
 	IconFacebookColored,
 	IconChevronCircleLeft,

@@ -10,7 +10,7 @@ import {
 
 const SelectPopularity = () => (
 	<SelectMod>
-		<SelectTriggerMod className="w-[130px]">
+		<SelectTriggerMod className="w-[130px] max-lg:bg-transparent">
 			<SelectValueMod placeholder="Popularity" />
 		</SelectTriggerMod>
 		<SelectContentMod>

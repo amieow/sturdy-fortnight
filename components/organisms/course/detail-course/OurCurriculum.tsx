@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { CURRICULUMS } from "@/content/curriculums";
 import {
 	Accordion,
 	AccordionItem,
 	AccordionTrigger,
 	AccordionContent,
-} from "../../atoms/Accordion";
-import Typography from "../../atoms/Typography";
-import { cn } from "@/lib/utils";
-import { CURRICULUMS } from "@/content/curriculums";
+} from "@/components/atoms/Accordion";
+import Typography from "@/components/atoms/Typography";
 
 const OurCurriculums = () => {
 	const [selected, setSelected] = useState("");
