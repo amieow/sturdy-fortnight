@@ -42,8 +42,8 @@ const ContentCard = (
 	>,
 ) => {
 	return (
-		<div className="flex gap-4 h-full">
-			<div className=" relative w-[105px] rounded-[10px]">
+		<div className="flex max-[500px]:flex-col gap-4 h-full">
+			<div className=" relative w-full min-[500px]:w-[105px] max-[500px]:h-20 rounded-[10px]">
 				<Image
 					src={props.imageUrl}
 					alt="blur"
@@ -64,7 +64,7 @@ const ContentCard = (
 };
 
 const Pricing = ({ price }: Pick<CartCourseCardProps, "price">) => (
-	<div className="flex flex-col h-20 justify-between px-[10px] ">
+	<div className="flex flex-col sm:h-20 justify-between px-[10px] ">
 		<button className=" bg-[#D72525] ml-auto rounded-bl-xl p-2 w-fit">
 			<Icondelete
 				width={24}
@@ -89,8 +89,8 @@ export default function CartCourseCard(
 	},
 ) {
 	return (
-		<AccordionContent className="flex px-[10px] justify-between items-center">
-			<div className="flex gap-4 h-20 items-center">
+		<AccordionContent className="flex px-[10px] justify-between">
+			<div className="flex gap-4 min-[500px]:h-20 items-center">
 				<Checkbox
 					onClick={() =>
 						props.isSelected

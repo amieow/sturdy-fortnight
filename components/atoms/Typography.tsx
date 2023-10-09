@@ -58,7 +58,7 @@ const typographyVariant = cva("leading-none", {
 			textS: "text-[12px]",
 			textM: "text-[14px]",
 			textL: "text-[16px]",
-			textXl: "text-[16px]",
+			textXl: "text-[18px]",
 			heading4: "text-[18px] md:text-[24px]",
 			heading3: "text-[20px] md:text-[28px]",
 			heading2: "text-[22px] md:text-[32px]",

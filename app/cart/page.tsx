@@ -1,17 +1,31 @@
+"use client";
 import Typography from "@/components/atoms/Typography";
-import React from "react";
+import React, { useState } from "react";
 import Checkouts from "@/components/organisms/cart/checkout";
 import { SelectSortBy } from "@/components/atoms/SelectSortingBy";
+const Modal = dynamic(
+	() => import("@/components/organisms/cart/payment-complete/Modal"),
+	{ ssr: false },
+);
+import dynamic from "next/dynamic";
 import { BottomContentCart } from "@/components/organisms/cart/CartAvaible";
 export default function Pages() {
+	const [ModalOpen, setModal] = useState(false);
+	const toggle = () => setModal((bool) => !bool);
 	return (
-		<main className="flex gap-7 w-full container">
-			<div className="flex flex-col w-full">
-				<TopContentCart />
-				<BottomContentCart />
-			</div>
-			<Checkouts />
-		</main>
+		<>
+			<Modal
+				open={ModalOpen}
+				toggle={toggle}
+			/>
+			<main className="flex gap-7 max-lg:flex-col w-full container">
+				<div className="flex flex-col w-full">
+					<TopContentCart />
+					<BottomContentCart />
+				</div>
+				<Checkouts toggle={toggle} />
+			</main>
+		</>
 	);
 }
 const TopContentCart = () => (

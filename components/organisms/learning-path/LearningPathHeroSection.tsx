@@ -2,7 +2,7 @@ import Image from "next/image";
 import Typography from "@/components/atoms/Typography";
 
 const LearningPathHeroSection = () => (
-	<section className={"py-6 pt-9 px-4 md:py-[62px]"}>
+	<section className={"py-6 pt-9 px-4 md:py-[62px] container"}>
 		<div
 			className={
 				"relative w-full h-[177px] sm:h-[300px] lg:h-[500px] text-center"

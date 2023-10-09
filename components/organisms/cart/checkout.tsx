@@ -29,10 +29,10 @@ const PAYMENT_DETAIL: PaymentDetailType = {
 	admin_cost: 5000,
 	kode_unik: 145,
 };
-export default function Checkouts() {
+export default function Checkouts({ toggle }: { toggle: () => void }) {
 	return (
-		<div className="w-fit flex-shrink-0 flex">
-			<div className="flex sticky top-3 flex-col h-fit bg-neutral06 p-6 gap-6 flex-shrink-0">
+		<div className="lg:w-fit lg:flex-shrink-0 flex justify-center">
+			<div className="flex sticky top-3 flex-col h-fit bg-neutral06 p-6 gap-6 lg:flex-shrink-0">
 				<Typography
 					fontFamily={"roboto"}
 					size={"textXl"}
@@ -43,14 +43,13 @@ export default function Checkouts() {
 				<PaymentMethod />
 				<PromoAndEmail />
 				<PaymentDetails {...PAYMENT_DETAIL} />
-				<Link href={"/cart/payment-complete"}>
-					<Button
-						className="py-3 w-full"
-						size={"large"}
-						variant={"primary"}>
-						Complete the payment
-					</Button>
-				</Link>
+				<Button
+					onClick={toggle}
+					className="py-3 w-full"
+					size={"large"}
+					variant={"primary"}>
+					Complete the payment
+				</Button>
 			</div>
 		</div>
 	);

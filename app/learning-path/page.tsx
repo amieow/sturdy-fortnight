@@ -12,7 +12,7 @@ import { Button } from "@/components/atoms/Button";
 
 export default function LearningPathPage() {
 	return (
-		<main className="bg-neutral01 container dark:bg-neutral08">
+		<main className="bg-neutral01 dark:bg-neutral08">
 			<LearningPathHeroSection />
 			<LearningPathFilterSection />
 			<ProductCategorySection

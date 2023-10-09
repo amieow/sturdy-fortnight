@@ -1,13 +1,14 @@
-"use client";
 import "./globals.css";
 import { Inter, Poppins, Roboto } from "next/font/google";
 import { ThemeProvider } from "@/components/templates/ThemeProviders";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
 import IsLoginPage from "@/components/templates/IsLoginPage";
-import { useEffect } from "react";
-import { useBoundStore } from "@/lib/state";
-import { useRouter } from "next/navigation";
+import TakeCookie from "@/components/organisms/TakeCookie";
+
+export const metadata = {
+	title: "schoolabs",
+};
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -32,27 +33,25 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const getKue = useBoundStore((state) => state.getAllKue);
-	useEffect(() => {
-		getKue();
-	}, [getKue]);
 	return (
 		<html lang="en">
-			<body
-				className={`${poppins.variable} ${inter.variable} ${roboto.variable} bg-neutral08`}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="dark"
-					enableSystem>
-					<IsLoginPage>
-						<Header />
-					</IsLoginPage>
-					{children}
-					<IsLoginPage>
-						<Footer />
-					</IsLoginPage>
-				</ThemeProvider>
-			</body>
+			<TakeCookie>
+				<body
+					className={`${poppins.variable} ${inter.variable} ${roboto.variable} bg-neutral08`}>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="dark"
+						enableSystem>
+						<IsLoginPage>
+							<Header />
+						</IsLoginPage>
+						{children}
+						<IsLoginPage>
+							<Footer />
+						</IsLoginPage>
+					</ThemeProvider>
+				</body>
+			</TakeCookie>
 		</html>
 	);
 }

@@ -2,11 +2,12 @@
 import { Button } from "@/components/atoms/Button";
 import Typography from "@/components/atoms/Typography";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import React from "react";
 
 export default function OtherRoutingLogin() {
 	const Path = usePathname();
+	const params = useSearchParams().toString();
 	if (Path.includes("signup")) {
 		return (
 			<div className="flex gap-2 items-center">
@@ -15,7 +16,7 @@ export default function OtherRoutingLogin() {
 					fontFamily="roboto">
 					Already have Account?
 				</Typography>
-				<Link href={"/login/signin"}>
+				<Link href={`/login/signin?${params}`}>
 					<Button
 						size={"small"}
 						variant={"tertiary"}>
@@ -32,7 +33,7 @@ export default function OtherRoutingLogin() {
 				fontFamily="roboto">
 				Dont have Account?
 			</Typography>
-			<Link href={"/login/signup"}>
+			<Link href={`/login/signup?${params}`}>
 				<Button
 					size={"small"}
 					variant={"tertiary"}>

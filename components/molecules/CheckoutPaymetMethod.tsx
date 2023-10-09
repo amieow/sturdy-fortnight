@@ -9,14 +9,16 @@ const PaymentMethod = () => {
 				thick="semibold">
 				Payment Method
 			</Typography>
-			<div className="flex gap-5">
-				{PAYMENT_METHOD.map((item, index) => (
-					<button
-						className=" bg-transparent flex items-center p-4 border rounded-lg border-neutral02"
-						key={index}>
-						<Typography fontFamily={"poppins"}>{item}</Typography>
-					</button>
-				))}
+			<div className=" w-full overflow-scroll">
+				<div className="flex gap-5 shrink-0">
+					{PAYMENT_METHOD.map((item, index) => (
+						<button
+							className=" bg-transparent flex items-center p-4 border rounded-lg flex-shrink-0 border-neutral02"
+							key={index}>
+							<Typography fontFamily={"poppins"}>{item}</Typography>
+						</button>
+					))}
+				</div>
 			</div>
 		</div>
 	);

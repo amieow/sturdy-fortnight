@@ -3,7 +3,7 @@ import { Button } from "@/components/atoms/Button";
 import { IconEdit2 } from "@/components/atoms/icon";
 
 const LearningPathFilterSection = () => (
-	<section className={" py-10 md:py-16"}>
+	<section className={" py-10 md:py-16 container"}>
 		<Typography
 			size={"heading1"}
 			as={"h1"}

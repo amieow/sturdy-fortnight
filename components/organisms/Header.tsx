@@ -12,10 +12,17 @@ import { IsLoginedUser, cn } from "@/lib/utils";
 import PopoverNavbar, { navLinks } from "../atoms/PopoverNavbar";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Popover, PopoverContent, PopoverTrigger } from "../atoms/Popover";
+import { SidebarDashboard } from "../templates/DashboardLayout";
 
 const Header = () => {
 	const isLogin = IsLoginedUser().status;
 	const [loading, setLoading] = useState(true);
+	const [openNavbar, setOpenNavbar] = useState(false);
+	const ToggleOpenNavbar = () => setOpenNavbar((current) => !current);
+	const [openNavbarProfile, setOpenNavbarProfile] = useState(false);
+	const ToggleOpenNavbarProfile = () =>
+		setOpenNavbarProfile((current) => !current);
 	useEffect(() => {
 		setLoading(false);
 	}, [setLoading]);
@@ -36,27 +43,17 @@ const Header = () => {
 					))}
 				</ul>
 			</nav>
-			<div className=" gap-5 flex ">
+			<div className=" gap-5 flex items-center ">
 				<div className={"flex max-sm:hidden flex-row gap-5 items-center "}>
 					<IconSearch className={"h-6 w-6 text-neutral04"} />
 					<Link href={"/cart"}>
 						<IconCart className={"h-6 w-6 text-neutral04"} />
 					</Link>
 					{!loading && isLogin && (
-						<>
-							<IconNotification
-								width={24}
-								height={24}
-							/>
-							<Link href={"/dashboard"}>
-								<Image
-									src={"/profil.png"}
-									alt=""
-									width={42}
-									height={42}
-								/>
-							</Link>
-						</>
+						<IconNotification
+							width={24}
+							height={24}
+						/>
 					)}
 					{!loading && !isLogin && (
 						<>
@@ -66,7 +63,32 @@ const Header = () => {
 						</>
 					)}
 				</div>
-				<PopoverNavbar isLogin={isLogin} />
+				{!loading && isLogin && (
+					<Popover
+						onOpenChange={ToggleOpenNavbarProfile}
+						open={!openNavbar && openNavbarProfile}>
+						<PopoverTrigger asChild>
+							<Image
+								onClick={() => null}
+								src={"/profil.png"}
+								alt=""
+								className=" cursor-pointer max-sm:w-7 border border-neutral01 rounded-full max-sm:h-7"
+								width={42}
+								height={42}
+							/>
+						</PopoverTrigger>
+						<PopoverContent
+							className=" border-0 p-0 pt-1"
+							side={"bottom"}>
+							<SidebarDashboard />
+						</PopoverContent>
+					</Popover>
+				)}
+				<PopoverNavbar
+					openNavbar={openNavbar && !openNavbarProfile}
+					toggle={ToggleOpenNavbar}
+					isLogin={isLogin}
+				/>
 			</div>
 		</header>
 	);

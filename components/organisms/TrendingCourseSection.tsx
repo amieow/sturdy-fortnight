@@ -15,8 +15,8 @@ const TrendingCourseSection = ({
 	seeMoreButton,
 }: TrendingCourseSectionType) => {
 	return (
-		<section className={"py-12 space-y-8"}>
-			<div className={"flex justify-between items-center"}>
+		<section className={"py-12 max-xl:pl-4 space-y-8"}>
+			<div className={"flex justify-between container items-center"}>
 				<Typography
 					size={"heading1"}
 					className={"max-sm:text-[28px]"}
