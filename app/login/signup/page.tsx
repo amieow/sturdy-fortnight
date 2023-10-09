@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import { Button } from "@/components/atoms/Button";
 import { LabelInput } from "@/components/atoms/input";
 import { setCookie } from "@/lib/cookie";
