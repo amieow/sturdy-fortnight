@@ -65,7 +65,7 @@ const typographyVariant = cva("leading-none", {
 			heading1: "text-[24px] md:text-[36px]",
 			display3: "text-[26px] md:text-[48px]",
 			display2: "text-[32px] md:text-[56px]",
-			display1: "text-[40px] md:text-[64px]",
+			display1: "text-[34px] md:text-[64px]",
 		},
 		thick: {
 			bolder: "font-[800]",

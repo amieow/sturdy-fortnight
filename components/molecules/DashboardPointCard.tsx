@@ -11,7 +11,7 @@ import { IconTripleDotVertical, Iconinfo } from "@/components/atoms/icon";
 import { StarFilledIcon } from "@radix-ui/react-icons";
 
 const DashboardPointCard = () => (
-	<Card className={"w-[400px] pb-0"}>
+	<Card className={"lg:w-[400px] pb-0"}>
 		<CardHeader className={"flex flex-row justify-between items-start"}>
 			<Typography
 				size={"heading4"}
@@ -67,7 +67,7 @@ const DashboardPointCard = () => (
 				/>
 			</div>
 		</CardContent>
-		<CardFooter className={"flex justify-between items-center !pb-0"}>
+		<CardFooter className={"flex justify-between items-center !pb-4"}>
 			<div>
 				<Typography size={"textS"}>350 More Points to be</Typography>
 				<Typography

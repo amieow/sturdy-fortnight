@@ -20,7 +20,7 @@ const buttonVariants = cva("rounded-md   font-inter font-[600]", {
             disabled:text-neutral07  disabled:dark:text-neutral04 `,
     },
     size: {
-      medium: "h-10 py-2 px-4 text-textM",
+      medium: "h-10 py-2 px-4 text-[9px] lg:text-textM",
       small: "h-8 px-2 text-textS",
       large: "h-14 px-8 text-textL",
       extraLarge: "h-20 px-8 text-textXl",

@@ -19,7 +19,7 @@ export default function LearningPathPage() {
         title={"Front-End Developer"}
         items={COURSE_MINI_CARD_CONTENT}
         seeMoreButton={
-          <Button size={"large"} variant={"secondary"}>
+          <Button size={"large"} variant={"secondary"} className={"hidden lg:block"}>
             See More
           </Button>
         }
@@ -28,7 +28,7 @@ export default function LearningPathPage() {
         title={"Back-End Developer"}
         items={COURSE_MINI_CARD_CONTENT}
         seeMoreButton={
-          <Button size={"large"} variant={"secondary"}>
+          <Button size={"large"} variant={"secondary"} className={"hidden lg:block"}>
             See More
           </Button>
         }

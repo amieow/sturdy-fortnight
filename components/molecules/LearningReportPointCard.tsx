@@ -6,7 +6,7 @@ import { Button } from "@/components/atoms/Button";
 import { StarFilledIcon } from "@radix-ui/react-icons";
 
 const LearningReportPointCard = () => (
-  <Card className={"flex-grow p-8"}>
+  <Card className={"flex-grow p-8 h-64"}>
     <div
       className={
         "flex flex-row max-w-fit justify-between items-start gap-4 bg-neutral05 rounded-xl p-3"
@@ -44,7 +44,7 @@ const LearningReportPointCard = () => (
       }
     >
       {[1, 1, 1, 1, 1].map((item, index) => (
-        <div key={index} className={"relative w-[100px]"}>
+        <div key={index} className={"relative w-[40px] lg:w-[100px]"}>
           <div
             className={
               "w-6 h-6 bg-primary rounded-full mx-auto items-center justify-center flex "
@@ -53,8 +53,8 @@ const LearningReportPointCard = () => (
             <StarFilledIcon className={"w-4 h-4"} />
           </div>
           <div className={"absolute mx-auto mt-2 text-center w-full"}>
-            <Typography>1000</Typography>
-            <Typography size={"textXl"} as={"h4"}>
+            <Typography className={"text-textS lg:text-textM"}>1000</Typography>
+            <Typography size={"textXl"} as={"h4"} className={"text-[12px] lg:text-textXl"}>
               Explorer
             </Typography>
           </div>

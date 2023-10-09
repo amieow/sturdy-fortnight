@@ -7,6 +7,7 @@ import MyCourseItem, {
 import { MY_COURSES } from "@/content/course";
 import SelectRecent from "@/components/atoms/SelectRecent";
 import SelectProgress from "@/components/atoms/SelectProgress";
+import {IconTripleDotVertical} from "@/components/atoms/icon";
 
 
 export default function MyCourseCard({
@@ -25,10 +26,10 @@ export default function MyCourseCard({
           <Typography as={"h4"} size={"heading4"} thick={"bold"}>
             {title}
           </Typography>
-          <div className={"flex gap-2 items-center"}>
+          <IconTripleDotVertical className={"lg:hidden"} />
+          <div className={"flex gap-2 items-center hidden lg:block"}>
             <Typography>Sort By</Typography>
             <SelectProgress />
-
           </div>
         </div>
         <div className={"mt-4"}>{isBordered && <hr />}</div>
