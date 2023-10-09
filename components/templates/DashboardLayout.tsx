@@ -56,7 +56,7 @@ const SidebarDashboard = () => {
 	return (
 		<Card
 			className={
-				"w-[250px] min-w-[250px] px-8 py-12 bg-neutral02 dark:bg-neutral06 h-fit rounded-sm"
+				"hidden lg:block w-[250px] min-w-[250px] px-8 py-12 bg-neutral02 dark:bg-neutral06 h-fit rounded-sm"
 			}>
 			<ul className={"space-y-10"}>
 				{items.map((props, index) => (

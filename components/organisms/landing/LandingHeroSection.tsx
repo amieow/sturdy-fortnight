@@ -6,11 +6,11 @@ import {IconGroupStarLeft, IconGroupStarRight} from "@/components/atoms/icon";
 const LandingHeroSection = () => {
   return (
     <section className={"min-h-screen"}>
-      <div className={"container py-8 md:py-16 space-y-10 mx-auto"}>
+      <div className={"container py-16 space-y-10 mx-auto"}>
           <div className={"relative"}>
               <HeadingText />
-              <IconGroupStarLeft className={"absolute hidden lg:static left-0 bottom-0"} />
-              <IconGroupStarRight className={"absolute hidden lg:static top-0 -right-8"} />
+              <IconGroupStarLeft className={"absolute hidden lg:block left-0 bottom-0"} />
+              <IconGroupStarRight className={"absolute hidden lg:block top-0 -right-8"} />
           </div>
 
         <div

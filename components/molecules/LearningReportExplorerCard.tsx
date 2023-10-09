@@ -4,7 +4,7 @@ import { StarFilledIcon } from "@radix-ui/react-icons";
 import { Card } from "@/components/atoms/Card";
 
 const LearningReportExplorerCard = () => (
-  <Card className={"p-6 w-[280px] space-y-2"}>
+  <Card className={"p-6 w-full lg:w-[280px] space-y-2"}>
     <div className={"flex flex-row justify-between gap-4"}>
       <div>
         <Typography size={"textS"}>350 More Point to be</Typography>
