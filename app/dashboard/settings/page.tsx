@@ -26,7 +26,7 @@ const SettingPage = () => {
   });
 
   return (
-    <Card className={"w-3/4 min-h-screen py-6 px-4"}>
+    <Card className={"w-full lg:w-3/4 min-h-screen py-6 px-4"}>
       <CardHeader className={"space-y-6"}>
         <Typography size={"heading4"} as={"h4"} thick={"semibold"}>
           User Settings
@@ -52,7 +52,7 @@ const SettingPage = () => {
         <form onSubmit={form.handleSubmit(() => {})}>
           <CardContent className={"space-y-8"}>
             {/*TOP*/}
-            <div className={"flex flex-row gap-16"}>
+            <div className={"flex flex-col lg:flex-row gap-16"}>
               <div className={"basis-1/2 space-y-3"}>
                 <CustomFormField
                   control={form.control}
@@ -98,7 +98,7 @@ const SettingPage = () => {
               <Typography as={"h3"} size={"heading4"} thick={"bold"}>
                 Account Settings
               </Typography>
-              <div className={"flex flex-row gap-16 mt-4"}>
+              <div className={"flex flex-col lg:flex-row gap-16 mt-4"}>
                 <div className={"basis-1/2 space-y-6"}>
                   <CustomFormField
                     control={form.control}

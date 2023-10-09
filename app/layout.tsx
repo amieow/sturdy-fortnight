@@ -42,7 +42,7 @@ export default function RootLayout({
 				className={`${poppins.variable} ${inter.variable} ${roboto.variable} bg-neutral08`}>
 				<ThemeProvider
 					attribute="class"
-					defaultTheme="system"
+					defaultTheme="dark"
 					enableSystem>
 					<IsLoginPage>
 						<Header />

@@ -10,7 +10,7 @@ const DashboardPointSection = () => {
         <Typography size={"heading2"} thick={"regular"} as={"h4"}>
           Welcome back, <span className={"text-primary font-bold"}>Wade!</span>{" "}
         </Typography>
-        <div className={"flex flex-row mt-4 gap-8 "}>
+        <div className={"flex flex-col lg:flex-row mt-4 gap-8 "}>
           <DashboardPointCard />
           <LearningFrequencyCard />
         </div>

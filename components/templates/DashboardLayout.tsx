@@ -14,7 +14,7 @@ import {
 import { removeCookie } from "@/lib/cookie";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => (
-	<main className={"px-4 lg:px-24 py-24 flex flex-row lg:gap-12"}>
+	<main className={"container py-0 lg:py-24 flex flex-row lg:gap-12"}>
 		<SidebarDashboard />
 		<div className={"flex-grow"}>{children}</div>
 	</main>
@@ -56,7 +56,7 @@ const SidebarDashboard = () => {
 	return (
 		<Card
 			className={
-				"w-[250px] min-w-[250px] px-8 py-12 bg-neutral02 dark:bg-neutral06 h-fit rounded-sm"
+				"hidden lg:block w-[250px] min-w-[250px] px-8 py-12 bg-neutral02 dark:bg-neutral06 h-fit rounded-sm"
 			}>
 			<ul className={"space-y-10"}>
 				{items.map((props, index) => (

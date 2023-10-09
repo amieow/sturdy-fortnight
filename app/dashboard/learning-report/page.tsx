@@ -8,12 +8,13 @@ import SelectCategories from "@/components/atoms/SelectCategories";
 import SelectProgress from "@/components/atoms/SelectProgress";
 import SelectRecent from "@/components/atoms/SelectRecent";
 import LearningReportItem from "@/components/molecules/LearningReportItem";
+import {ScrollArea} from "@/components/atoms/ScrollArea";
 
 const LearningReportPage = () => {
 	return (
 		<>
 			{/* SECTION 1 */}
-			<section className={"flex flex-row gap-8 "}>
+			<section className={"flex flex-col lg:flex-row gap-8 "}>
 				{/*POINTS*/}
 				<LearningReportPointCard />
 				{/* EXPLORER */}
@@ -25,7 +26,7 @@ const LearningReportPage = () => {
 						<Typography>Sort By</Typography>
 						<SelectRecent />
 					</div>
-					<div className={"space-y-2"}>
+					<div className={"space-y-2 hidden lg:block"}>
 						<Typography>Filter By</Typography>
 						<div className={"flex gap-2"}>
 							<SelectCategories />
@@ -40,7 +41,7 @@ const LearningReportPage = () => {
 					<AccordionItem value="item-1">
 						<AccordionTrigger
 							className={
-								"flex flex-row justify-between items-center rounded-t-xl bg-neutral06 px-6"
+								"flex flex-col lg:flex-row justify-between items-center rounded-t-xl bg-neutral06 px-6"
 							}>
 							<div className={"flex flex-row flex-grow items-center gap-6"}>
 								<Avatar className={"h-16 w-16"}>
@@ -55,7 +56,9 @@ const LearningReportPage = () => {
 										<Typography
 											size={"heading4"}
 											as={"h4"}
-											color={"primary"}>
+											color={"primary"}
+											className={"text-left"}
+										>
 											UX Researcher
 										</Typography>
 										<div
@@ -72,7 +75,7 @@ const LearningReportPage = () => {
 									</Typography>
 								</div>
 							</div>
-							<div className={"flex gap-2 items-center basis-1/3 px-4"}>
+							<div className={"flex gap-2 items-center w-full lg:basis-1/3 px-4"}>
 								<Progress
 									value={50}
 									className={"border-[1px] border-accent w-full  "}
@@ -85,18 +88,21 @@ const LearningReportPage = () => {
 							</div>
 						</AccordionTrigger>
 						<AccordionContent className={"py-6"}>
-							<div className={"flex gap-6 "}>
-								<LearningReportItem />
-								<LearningReportItem />
-								<LearningReportItem />
-								<LearningReportItem />
-							</div>
+							<ScrollArea className={"w-[320px] lg:w-full"}>
+								<div className={"flex gap-6 "}>
+									<LearningReportItem />
+									<LearningReportItem />
+									<LearningReportItem />
+									<LearningReportItem />
+								</div>
+
+							</ScrollArea>
 						</AccordionContent>
 					</AccordionItem>
 					<AccordionItem value="item-2">
 						<AccordionTrigger
 							className={
-								"flex flex-row justify-between items-center rounded-t-xl bg-neutral06 px-6"
+								"flex flex-col lg:flex-row justify-between items-center rounded-t-xl bg-neutral06 px-6"
 							}>
 							<div className={"flex flex-row flex-grow items-center gap-6"}>
 								<Avatar className={"h-16 w-16"}>
@@ -111,7 +117,8 @@ const LearningReportPage = () => {
 										<Typography
 											size={"heading4"}
 											as={"h4"}
-											color={"primary"}>
+											color={"primary"}
+										className={"text-left"}>
 											UX Researcher
 										</Typography>
 										<div
@@ -128,7 +135,7 @@ const LearningReportPage = () => {
 									</Typography>
 								</div>
 							</div>
-							<div className={"flex gap-2 items-center basis-1/3 px-4"}>
+							<div className={"flex gap-2 items-center w-full lg:basis-1/3 px-4"}>
 								<Progress
 									value={50}
 									className={"border-[1px] border-accent w-full  "}
@@ -141,12 +148,15 @@ const LearningReportPage = () => {
 							</div>
 						</AccordionTrigger>
 						<AccordionContent className={"py-6"}>
-							<div className={"flex gap-6 "}>
-								<LearningReportItem />
-								<LearningReportItem />
-								<LearningReportItem />
-								<LearningReportItem />
-							</div>
+							<ScrollArea className={"w-[320px] lg:w-full"}>
+								<div className={"flex gap-6 "}>
+									<LearningReportItem />
+									<LearningReportItem />
+									<LearningReportItem />
+									<LearningReportItem />
+								</div>
+
+							</ScrollArea>
 						</AccordionContent>
 					</AccordionItem>
 				</Accordion>

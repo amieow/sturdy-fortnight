@@ -25,7 +25,7 @@ export default function MyCourseItem({
 }: MyCourseItemType) {
 	return (
 		<div
-			className={`relative flex flex-row py-4 gap-4 ${
+			className={`relative flex flex-row py-4 gap-4 w-[300px] lg:w-full ${
 				isBordered && "border-b-[1px]"
 			}`}>
 			<div className={"relative w-44 h-32 rounded-xl"}>
@@ -35,22 +35,24 @@ export default function MyCourseItem({
 					alt={title}
 				/>
 			</div>
-			<div>
+			<div className={"flex flex-col flex-grow"}>
 				<Typography
 					size={"heading4"}
-					as={"h4"}>
+					as={"h4"}
+				>
 					{title}
 				</Typography>
 				<div className={"space-y4"}>
-					<div className={"flex flex-row items-center"}>
+					<div className={"flex flex-col lg:flex-row items-start lg:items-center"}>
 						<Typography
 							size={"textS"}
-							color={"muted"}>
+							color={"muted"}
+						>
 							{isFinished ? "Finished" : `${progress}% Complete`}
 						</Typography>
 						{isStarted && (
 							<Typography
-								className={"ml-2 text-accent flex gap-2 w-fit items-center"}
+								className={"lg:ml-2 text-accent flex gap-2 w-fit items-center"}
 								color={"accent"}
 								size={"textS"}>
 								<IconStar className={"w-3 h-3"} />
@@ -67,31 +69,34 @@ export default function MyCourseItem({
 						</Typography>
 					)}
 				</div>
-			</div>
-			<div className={"absolute right-4 bottom-4"}>
-				{!isStarted && <Button size={"medium"}>Learn Now</Button>}
-				{isStarted && !isFinished && (
-					<Button
-						variant={"secondary"}
-						size={"medium"}>
-						Continue
-					</Button>
-				)}
-				{isFinished && (
-					<div className={"flex gap-4"}>
+				<div className={"self-end justify-end mt-4"}>
+					{!isStarted && <Button size={"medium"}>Learn Now</Button>}
+					{isStarted && !isFinished && (
 						<Button
-							variant={"tertiary"}
+							variant={"secondary"}
 							size={"medium"}>
-							Review
+							Continue
 						</Button>
-						<Button
-							variant={"primary"}
-							size={"medium"}>
-							See Certificate
-						</Button>
-					</div>
-				)}
+					)}
+					{isFinished && (
+						<div className={"flex gap-4"}>
+							<Button
+								variant={"tertiary"}
+								size={"medium"}
+							>
+								Review
+							</Button>
+							<Button
+								variant={"primary"}
+								size={"medium"}
+							>
+								See Certificate
+							</Button>
+						</div>
+					)}
+				</div>
 			</div>
+
 		</div>
 	);
 }
