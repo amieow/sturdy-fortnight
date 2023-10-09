@@ -1,18 +1,12 @@
-import dynamic from "next/dynamic";
 import { Button } from "@/components/atoms/Button";
 import Typography from "@/components/atoms/Typography";
 import { IconCheckmarkCircle } from "@/components/atoms/icon";
 import PaymentDetail from "@/components/organisms/cart/payment-complete/PaymentDetail";
 import Link from "next/link";
 import React from "react";
-const Modal = dynamic(
-	() => import("@/components/organisms/cart/payment-complete/Modal"),
-	{ ssr: false },
-);
 function Pages() {
 	return (
 		<>
-			<Modal />
 			<main className=" max-w-[608px] mx-auto py-[42px] justify-center flex flex-col items-center gap-3">
 				<IconCheckmarkCircle
 					width={42}

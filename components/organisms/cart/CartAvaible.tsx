@@ -18,46 +18,6 @@ const CART_AVAIBLE: CART_AVAIBLE_TYPE[] = [
 				price: 150000,
 				imageUrl: "/courses/course1.png",
 			},
-			{
-				title: "UX Fundamental 102",
-				kelas: "Beginner",
-				reviewCount: 3200,
-				price: 150000,
-				imageUrl: "/courses/course1.png",
-			},
-			{
-				title: "UX Fundamental 103",
-				kelas: "Beginner",
-				reviewCount: 3200,
-				price: 150000,
-				imageUrl: "/courses/course1.png",
-			},
-		],
-	},
-	{
-		title: "Programer",
-		subCart: [
-			{
-				title: "UX Fundamental 101",
-				kelas: "Beginner",
-				reviewCount: 3200,
-				price: 150000,
-				imageUrl: "/courses/course1.png",
-			},
-			{
-				title: "UX Fundamental 102",
-				kelas: "Beginner",
-				reviewCount: 3200,
-				price: 150000,
-				imageUrl: "/courses/course1.png",
-			},
-			{
-				title: "UX Fundamental 103",
-				kelas: "Beginner",
-				reviewCount: 3200,
-				price: 150000,
-				imageUrl: "/courses/course1.png",
-			},
 		],
 	},
 ];

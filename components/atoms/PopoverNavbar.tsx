@@ -24,14 +24,20 @@ export const navLinks: { title: string; link: string }[] = [
 		link: "/about-us",
 	},
 ];
-export default function PopoverNavbar({ isLogin }: { isLogin: boolean }) {
-	const [openNavbar, setOpenNavbar] = useState(false);
-	const ToggleOpenNavbar = () => setOpenNavbar((current) => !current);
+export default function PopoverNavbar({
+	isLogin,
+	toggle,
+	openNavbar,
+}: {
+	isLogin: boolean;
+	toggle: () => void;
+	openNavbar: boolean;
+}) {
 	return (
-		<Popover open={openNavbar}>
-			<PopoverTrigger
-				className="md:hidden"
-				onClick={ToggleOpenNavbar}>
+		<Popover
+			onOpenChange={toggle}
+			open={openNavbar}>
+			<PopoverTrigger className="md:hidden">
 				<div
 					className={cn(
 						" p-3 flex flex-col h-fit gap-[3px] rounded-lg w-10 md:hidden",
@@ -47,7 +53,7 @@ export default function PopoverNavbar({ isLogin }: { isLogin: boolean }) {
 				</div>
 			</PopoverTrigger>
 			<PopoverContent
-				onClick={ToggleOpenNavbar}
+				onClick={toggle}
 				side="top"
 				sideOffset={5}
 				className=" bg-neutral06 md:hidden outline-none list-none border-none flex flex-col gap-6 justify-stretch items-center text-textXl font-light"

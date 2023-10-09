@@ -29,12 +29,18 @@ const SectionHeroAboutUs = () => (
 				"flex flex-col lg:flex-row mx-auto gap-8 mt-12 w-full justify-center"
 			}>
 			<Image
-				src={"./about-us/image1.png"}
+				src={"/about-us/image1.png"}
 				alt={"About Us 1"}
+				className=" max-lg:w-full max-lg:h-[311px] rounded"
+				width={292}
+				height={311}
 			/>
 			<Image
-				src={"./about-us/image2.png"}
+				src={"/about-us/image2.png"}
 				alt={"About Us 2"}
+				width={292}
+				height={311}
+				className=" max-lg:w-full max-lg:h-[311px] rounded"
 			/>
 		</div>
 	</section>
