@@ -10,7 +10,7 @@ import {
 
 const SelectDateSort = () => (
 	<SelectMod>
-		<SelectTriggerMod className="w-[130px]">
+		<SelectTriggerMod className="w-[130px] max-lg:bg-transparent">
 			<SelectValueMod placeholder="Upload Date" />
 		</SelectTriggerMod>
 		<SelectContentMod>

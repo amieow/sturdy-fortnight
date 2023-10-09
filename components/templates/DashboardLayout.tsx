@@ -14,7 +14,7 @@ import {
 import { removeCookie } from "@/lib/cookie";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => (
-	<main className={"container py-0 lg:py-24 flex flex-row lg:gap-12"}>
+	<main className={" container flex flex-row lg:gap-12"}>
 		<SidebarDashboard />
 		<div className={"flex-grow"}>{children}</div>
 	</main>

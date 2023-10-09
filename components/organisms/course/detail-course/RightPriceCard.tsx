@@ -1,10 +1,10 @@
 import { formatRupiah } from "@/lib/formatter";
-import Typography from "../../atoms/Typography";
-import { IconCart, IconPlus } from "../../atoms/icon";
-import { CourseBigCardType } from "../../molecules/CourseBigCard";
-import { Button } from "../../atoms/Button";
 import Link from "next/link";
 import { HeaderDetailCourse } from "./HeaderDetailCourse";
+import Typography from "@/components/atoms/Typography";
+import { IconCart, IconPlus } from "@/components/atoms/icon";
+import { CourseBigCardType } from "@/components/molecules/CourseBigCard";
+import { Button } from "@/components/atoms/Button";
 
 export interface RightPriceCardProps extends CourseBigCardType {
 	author: string;

@@ -10,7 +10,7 @@ import {
 
 const SelectDurationSort = () => (
 	<SelectMod>
-		<SelectTriggerMod className="w-[180px]">
+		<SelectTriggerMod className="lg:w-[180px] max-lg:bg-transparent">
 			<SelectValueMod placeholder="Video Duration" />
 		</SelectTriggerMod>
 		<SelectContentMod>
