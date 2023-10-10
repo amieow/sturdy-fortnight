@@ -27,7 +27,7 @@ const CourseBigCard = ({
 	duration,
 }: CourseBigCardType) => {
 	return (
-		<Card className={"w-[390px]"}>
+		<Card className={"w-fit lg:w-[390px] min-w-[300px]"}>
 			<div className={"relative w-full h-[230px]"}>
 				<Image
 					fill={true}

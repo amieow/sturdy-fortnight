@@ -26,7 +26,7 @@ const TrendingCourseSection = ({
 				{seeMoreButton}
 			</div>
 			<div
-				className={"gap-6  overflow-x-auto snap-x whitespace-nowrap space-x-8"}>
+				className={"gap-6 px-6 lg:px-24 overflow-x-auto snap-x whitespace-nowrap space-x-8"}>
 				{items.map((props, index) => (
 					<div
 						className={"snap-center inline-block"}
