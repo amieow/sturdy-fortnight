@@ -7,7 +7,7 @@ import IsLoginPage from "@/components/templates/IsLoginPage";
 import TakeCookie from "@/components/organisms/TakeCookie";
 
 export const metadata = {
-	title: "schoolabs",
+	title: "Schoolabs",
 };
 
 const inter = Inter({
@@ -35,6 +35,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
+		<head>
+			<title>{metadata.title}</title>
+			<link rel="icon" href="/logo-vertical.svg" />
+		</head>
 			<TakeCookie>
 				<body
 					className={`${poppins.variable} ${inter.variable} ${roboto.variable} bg-neutral08`}>
