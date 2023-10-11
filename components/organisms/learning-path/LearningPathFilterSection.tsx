@@ -3,7 +3,7 @@ import { Button } from "@/components/atoms/Button";
 import { IconEdit2 } from "@/components/atoms/icon";
 
 const LearningPathFilterSection = () => (
-	<section className={" py-10 md:py-16"}>
+	<section className={"container py-10 md:py-16"}>
 		<Typography
 			size={"heading1"}
 			as={"h1"}
@@ -11,7 +11,7 @@ const LearningPathFilterSection = () => (
 			thick={"bold"}>
 			Learning Paths
 		</Typography>
-		<div className={"flex flex-col lg:flex-row gap-20 mt-8"}>
+		<div className={"flex flex-col lg:flex-row  gap-20 mt-8"}>
 			<Typography
 				size={"heading4"}
 				as={"h6"}
