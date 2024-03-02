@@ -198,7 +198,7 @@ project evolves.
 ### UI/UX :
 
 1. [Muhammad Rizal Saputra ](https://www.linkedin.com/in/mrzls1998/)
-2. [Fatahillah Rahman](www.linkedin.com/in/fatahillah-rahman-1a524525b)
+2. [Fatahillah Rahman](https://www.linkedin.com/in/fatahillah-rahman-1a524525b)
 3. [Tiaranisa](https://www.linkedin.com/in/tiaranisa)
 4. [Fahrizanur](https://www.linkedin.com/in/fahrizanur-4798b0237)
 5. [Yahya](https://www.linkedin.com/in/zamzamialiy/)
